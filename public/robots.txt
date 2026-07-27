@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://techtrovesell.com/sitemap-index.xml
