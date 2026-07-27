@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "how-to-choose-wireless-gaming-controller",
+    "title": "How to Choose a Wireless Gaming Controller",
+    "category": "Gaming",
+    "excerpt": "Compatibility, ergonomics, battery life and control layout explained without unnecessary jargon.",
+    "image": "/images/controller.svg",
+    "readTime": "7 min read",
+    "intro": "The best controller is not simply the one with the longest feature list. It is the one that works with your devices, fits your hands and supports the games you play.",
+    "sections": [
+      {
+        "heading": "Start with compatibility",
+        "body": "Confirm the exact console, PC operating system, mobile device or game platform supported."
+      },
+      {
+        "heading": "Compare shape and layout",
+        "body": "Stick position, trigger travel, grip shape and overall size can matter more than extra buttons."
+      },
+      {
+        "heading": "Check battery and connection details",
+        "body": "Look at charging method, estimated battery life, wired fallback support and wireless connection type."
+      },
+      {
+        "heading": "Treat extras as secondary",
+        "body": "Programmable buttons and lighting can be useful, but only after the core controls meet your needs."
+      }
+    ]
+  },
+  {
+    "slug": "compact-keyboard-size-guide",
+    "title": "Compact Keyboard Size Guide",
+    "category": "PC Accessories",
+    "excerpt": "Understand full-size, TKL, 75% and 60% layouts before changing your everyday typing setup.",
+    "image": "/images/keyboard.svg",
+    "readTime": "6 min read",
+    "intro": "Keyboard size changes more than desk appearance. It affects dedicated keys, navigation habits, portability and mouse space.",
+    "sections": [
+      {
+        "heading": "Full-size",
+        "body": "Best for users who frequently rely on a number pad and dedicated navigation keys."
+      },
+      {
+        "heading": "Tenkeyless",
+        "body": "Removes the number pad while keeping most familiar navigation and function keys."
+      },
+      {
+        "heading": "75% and 65%",
+        "body": "Compress common keys into a smaller frame while retaining useful navigation controls."
+      },
+      {
+        "heading": "60%",
+        "body": "Prioritizes portability and mouse room, but often moves commands into secondary layers."
+      }
+    ]
+  }
+]

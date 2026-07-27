@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "wireless-multiplatform-controller",
+    "title": "Wireless Multi-Platform Controller",
+    "category": "gaming",
+    "categoryLabel": "Gaming",
+    "summary": "A sample review layout for buyers comparing compatibility, comfort, battery design and programmable controls.",
+    "image": "/images/controller.svg",
+    "badge": "Sample review",
+    "verdict": "A clear example of how TechTroveSell will present product strengths, limitations and intended users without fake testing claims.",
+    "status": "Research sample",
+    "amazonUrl": "#",
+    "features": [
+      "Multi-platform compatibility",
+      "Programmable controls",
+      "Rechargeable design"
+    ],
+    "pros": [
+      "Comfort-focused shape",
+      "Useful control customization",
+      "Designed for more than one platform"
+    ],
+    "cons": [
+      "Real-world performance still requires verification",
+      "Compatibility can vary by device and game"
+    ],
+    "bestFor": "Shoppers comparing one controller for casual console and PC use.",
+    "seoDescription": "Review framework for a wireless multi-platform gaming controller."
+  },
+  {
+    "slug": "compact-mechanical-keyboard",
+    "title": "Compact Mechanical Keyboard",
+    "category": "pc-accessories",
+    "categoryLabel": "PC Accessories",
+    "summary": "A sample review layout for users comparing keyboard size, desk space and everyday typing practicality.",
+    "image": "/images/keyboard.svg",
+    "badge": "Sample review",
+    "verdict": "A strong template for discussing layout trade-offs, switch preference and desk fit before making a recommendation.",
+    "status": "Research sample",
+    "amazonUrl": "#",
+    "features": [
+      "Compact layout",
+      "Mechanical key design",
+      "Desk-friendly footprint"
+    ],
+    "pros": [
+      "More mouse space",
+      "Cleaner compact setup",
+      "Useful for gaming and office comparisons"
+    ],
+    "cons": [
+      "Some layouts remove dedicated keys",
+      "Switch preference is highly personal"
+    ],
+    "bestFor": "Buyers choosing between full-size, TKL, 75% and smaller keyboard layouts.",
+    "seoDescription": "Review framework for a compact mechanical keyboard."
+  },
+  {
+    "slug": "usb-c-desktop-hub",
+    "title": "USB-C Desktop Hub",
+    "category": "office",
+    "categoryLabel": "Office",
+    "summary": "A sample review layout for laptop users comparing ports, portability and desk convenience.",
+    "image": "/images/hub.svg",
+    "badge": "Sample review",
+    "verdict": "A practical structure for explaining which ports matter and which compatibility claims need confirmation.",
+    "status": "Research sample",
+    "amazonUrl": "#",
+    "features": [
+      "Multiple port types",
+      "Single-cable connection",
+      "Portable enclosure"
+    ],
+    "pros": [
+      "Reduces cable switching",
+      "Expands laptop connectivity",
+      "Can simplify shared workspaces"
+    ],
+    "cons": [
+      "Power and display support vary by model",
+      "Not every USB-C port supports the same features"
+    ],
+    "bestFor": "Laptop users connecting displays, storage, keyboards or wired internet.",
+    "seoDescription": "Review framework for a USB-C desktop hub."
+  }
+]

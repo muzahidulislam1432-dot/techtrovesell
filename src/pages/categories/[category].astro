@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import products from "../../data/products.json";
+
+export function getStaticPaths() {
+  const categoryOptions = [
+    { slug: "gaming", label: "Gaming" },
+    { slug: "pc-accessories", label: "PC Accessories" },
+    { slug: "mobile", label: "Mobile" },
+    { slug: "smart-home", label: "Smart Home" },
+    { slug: "office", label: "Office" }
+  ];
+
+  return categoryOptions.map((category) => ({
+    params: { category: category.slug },
+    props: { category }
+  }));
+}
+
+const { category } = Astro.props;
+const matching = products.filter((product) => product.category === category.slug);
+---
+
+<BaseLayout
+  title={`${category.label} | TechTroveSell`}
+  description={`${category.label} reviews and buying guides from TechTroveSell.`}
+  canonical={`https://techtrovesell.com/categories/${category.slug}/`}
+>
+  <Header />
+
+  <main>
+    <section class="archive-hero">
+      <div class="container">
+        <Breadcrumbs
+          items={[
+            { label: "Categories", href: "/categories/" },
+            { label: category.label, href: `/categories/${category.slug}/` }
+          ]}
+        />
+        <p class="eyebrow">Category</p>
+        <h1>{category.label}</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {matching.length > 0 ? (
+          <div class="archive-grid">
+            {matching.map((product) => (
+              <article class="archive-card">
+                <img src={product.image} alt="" width="640" height="460" />
+                <div>
+                  <p class="eyebrow">{product.categoryLabel}</p>
+                  <h2>
+                    <a href={`/reviews/${product.slug}/`}>{product.title}</a>
+                  </h2>
+                  <p>{product.summary}</p>
+                  <a class="text-link" href={`/reviews/${product.slug}/`}>
+                    Read review →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <h2>Research is in progress.</h2>
+            <p>
+              Original reviews and buying guides will appear here as they are completed.
+            </p>
+            <a class="button button--dark" href="/buying-guides/">
+              Browse buying guides
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

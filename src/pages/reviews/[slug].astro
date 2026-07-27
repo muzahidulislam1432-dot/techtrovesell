@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import products from "../../data/products.json";
+
+export function getStaticPaths() {
+  return products.map(product => ({ params:{slug:product.slug}, props:{product} }));
+}
+const { product } = Astro.props;
+
+const schema = {
+  "@context":"https://schema.org",
+  "@type":"Review",
+  "itemReviewed":{"@type":"Product","name":product.title},
+  "author":{"@type":"Organization","name":"TechTroveSell"},
+  "reviewBody":product.verdict
+};
+---
+<BaseLayout title={`${product.title} Review | TechTroveSell`} description={product.seoDescription} canonical={`https://techtrovesell.com/reviews/${product.slug}/`} type="article">
+  <Header />
+  <main>
+    <section class="review-hero">
+      <div class="container">
+        <Breadcrumbs items={[{label:"Reviews",href:"/reviews/"},{label:product.title,href:`/reviews/${product.slug}/`}]} />
+      </div>
+      <div class="container review-hero-grid">
+        <div>
+          <p class="eyebrow">{product.categoryLabel} review</p>
+          <span class="review-badge">{product.badge}</span>
+          <h1>{product.title}</h1>
+          <p class="review-lead">{product.summary}</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href={product.amazonUrl} rel="nofollow sponsored noopener">Check current price</a>
+            <a class="button button--ghost" href="#verdict">Read verdict</a>
+          </div>
+          <p class="inline-disclosure">Disclosure: This page may contain affiliate links. As an Amazon Associate, we earn from qualifying purchases.</p>
+        </div>
+        <div class="review-image"><img src={product.image} alt="" /></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container review-layout">
+        <article>
+          <section class="review-panel" id="verdict">
+            <p class="eyebrow">Quick verdict</p>
+            <h2>{product.verdict}</h2>
+            <div class="score-row"><span>Editorial status</span><strong>{product.status}</strong></div>
+          </section>
+
+          <section class="review-panel">
+            <h2>Key features to verify</h2>
+            <ul class="feature-list">{product.features.map(x => <li>{x}</li>)}</ul>
+          </section>
+
+          <section class="pros-cons-grid">
+            <div class="review-panel pros-panel">
+              <h2>Potential advantages</h2>
+              <ul>{product.pros.map(x => <li>{x}</li>)}</ul>
+            </div>
+            <div class="review-panel cons-panel">
+              <h2>Possible limitations</h2>
+              <ul>{product.cons.map(x => <li>{x}</li>)}</ul>
+            </div>
+          </section>
+
+          <section class="review-panel">
+            <h2>Who it may suit</h2>
+            <p>{product.bestFor}</p>
+          </section>
+
+          <section class="review-panel review-note">
+            <h2>Editorial note</h2>
+            <p>This is sample content, not a finished recommendation. Real pages will only include claims supported by reliable product information or clearly disclosed hands-on testing.</p>
+          </section>
+        </article>
+
+        <aside>
+          <div class="sticky-card">
+            <img src={product.image} alt="" />
+            <h2>{product.title}</h2>
+            <p>{product.summary}</p>
+            <a class="button button--primary button--full" href={product.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a>
+            <small>Price and availability are confirmed on Amazon.</small>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+  <Footer />
+</BaseLayout>
