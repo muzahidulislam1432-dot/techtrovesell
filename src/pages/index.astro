@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import products from "../data/products.json";
+import guides from "../data/guides.json";
+
+const categories = [
+  { slug:"gaming", icon:"🎮", title:"Gaming", text:"Controllers, headsets and accessories" },
+  { slug:"pc-accessories", icon:"⌨️", title:"PC Accessories", text:"Keyboards, mice, hubs and more" },
+  { slug:"mobile", icon:"📱", title:"Mobile", text:"Chargers, stands and smart add-ons" },
+  { slug:"smart-home", icon:"🏠", title:"Smart Home", text:"Connected-home essentials" },
+  { slug:"office", icon:"💼", title:"Office", text:"Tools for productive desks" }
+];
+---
+<BaseLayout title="TechTroveSell | Smarter Tech Reviews and Buying Guides" description="Independent technology reviews, comparisons and practical buying guides.">
+  <Header />
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">Smarter tech shopping starts here</span>
+          <h1>Find the right tech without the <span>guesswork.</span></h1>
+          <p>Independent product research, easy comparisons and practical buying advice for everyday technology.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="/reviews/">Explore reviews</a>
+            <a class="button button--ghost" href="/buying-guides/">Read buying guides</a>
+          </div>
+          <div class="trust-row">
+            <span>✓ Clear recommendations</span>
+            <span>✓ Honest limitations</span>
+            <span>✓ No fake reviews</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="/images/hero.svg" alt="" width="760" height="570" />
+          <div><strong>Better choices, clearly explained</strong><span>Compare what matters before you click.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Browse by category</p><h2>Start with what you need</h2></div>
+        <div class="category-grid">
+          {categories.map(c => (
+            <a class="category-card" href={`/categories/${c.slug}/`}>
+              <span class="category-icon">{c.icon}</span>
+              <strong>{c.title}</strong>
+              <small>{c.text}</small>
+              <span class="category-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Featured recommendations</p><h2>Top picks worth comparing</h2></div>
+        <div class="archive-grid">
+          {products.map(p => (
+            <article class="archive-card">
+              <img src={p.image} alt="" />
+              <div>
+                <p class="eyebrow">{p.categoryLabel}</p>
+                <h2><a href={`/reviews/${p.slug}/`}>{p.title}</a></h2>
+                <p>{p.summary}</p>
+                <a class="text-link" href={`/reviews/${p.slug}/`}>Read review →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Buying guides</p><h2>Understand what matters</h2></div>
+        <div class="archive-grid">
+          {guides.map(g => (
+            <article class="archive-card">
+              <img src={g.image} alt="" />
+              <div>
+                <p class="eyebrow">{g.category}</p>
+                <h2><a href={`/buying-guides/${g.slug}/`}>{g.title}</a></h2>
+                <p>{g.excerpt}</p>
+                <a class="text-link" href={`/buying-guides/${g.slug}/`}>Read guide →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

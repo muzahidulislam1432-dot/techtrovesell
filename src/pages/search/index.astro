@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import products from "../../data/products.json";
+import guides from "../../data/guides.json";
+
+const searchable = [
+  ...products.map(p => ({type:"Review",title:p.title,summary:p.summary,url:`/reviews/${p.slug}/`,category:p.categoryLabel})),
+  ...guides.map(g => ({type:"Guide",title:g.title,summary:g.excerpt,url:`/buying-guides/${g.slug}/`,category:g.category}))
+];
+---
+<BaseLayout title="Search | TechTroveSell" description="Search TechTroveSell reviews and buying guides.">
+  <Header />
+  <main>
+    <section class="archive-hero">
+      <div class="container">
+        <p class="eyebrow">Search</p>
+        <h1>Find a review or buying guide.</h1>
+        <input id="search-input" class="search-input" type="search" placeholder="Try: controller, keyboard, USB-C..." autocomplete="off" />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="search-results" class="search-results">
+          {searchable.map(item => (
+            <article class="search-card" data-search={`${item.title} ${item.summary} ${item.category}`.toLowerCase()}>
+              <span>{item.type} · {item.category}</span>
+              <h2><a href={item.url}>{item.title}</a></h2>
+              <p>{item.summary}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const input = document.querySelector("#search-input");
+    const cards = [...document.querySelectorAll(".search-card")];
+    input?.addEventListener("input", (event) => {
+      const query = event.target.value.toLowerCase().trim();
+      cards.forEach((card) => {
+        card.hidden = query && !card.dataset.search.includes(query);
+      });
+    });
+  </script>
+
+  <Footer />
+</BaseLayout>

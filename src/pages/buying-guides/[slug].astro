@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import guides from "../../data/guides.json";
+
+export function getStaticPaths() {
+  return guides.map(guide => ({ params:{slug:guide.slug}, props:{guide} }));
+}
+const { guide } = Astro.props;
+
+const schema = {
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":guide.title,
+  "description":guide.excerpt,
+  "author":{"@type":"Organization","name":"TechTroveSell"},
+  "publisher":{"@type":"Organization","name":"TechTroveSell"}
+};
+---
+<BaseLayout title={`${guide.title} | TechTroveSell`} description={guide.excerpt} canonical={`https://techtrovesell.com/buying-guides/${guide.slug}/`} type="article">
+  <Header />
+  <main>
+    <section class="guide-hero">
+      <div class="container">
+        <Breadcrumbs items={[{label:"Buying Guides",href:"/buying-guides/"},{label:guide.title,href:`/buying-guides/${guide.slug}/`}]} />
+      </div>
+      <div class="container review-hero-grid">
+        <div>
+          <p class="eyebrow">{guide.category} buying guide</p>
+          <h1>{guide.title}</h1>
+          <p class="review-lead">{guide.excerpt}</p>
+          <span class="review-badge">{guide.readTime}</span>
+        </div>
+        <div class="review-image"><img src={guide.image} alt="" /></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="container guide-article">
+        <p class="guide-intro">{guide.intro}</p>
+        {guide.sections.map((s,i) => (
+          <section>
+            <span class="section-number">{String(i+1).padStart(2,"0")}</span>
+            <h2>{s.heading}</h2>
+            <p>{s.body}</p>
+          </section>
+        ))}
+        <div class="guide-callout">
+          <h2>Before you buy</h2>
+          <p>Confirm compatibility, warranty, return conditions and current product details on the retailer page.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+  <Footer />
+</BaseLayout>
