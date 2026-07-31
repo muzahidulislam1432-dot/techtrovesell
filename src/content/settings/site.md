@@ -1,12 +1,12 @@
 ---
 siteName: TechTroveSell
-socialBrandName: TechTroveStore
+socialBrandName: TechTroveSell
 tagline: Smart Tech. Honest Reviews. Better Choices.
 businessEmail: techtrovenet0@gmail.com
-amazonTag: ""
-facebookUrl: ""
-pinterestUrl: ""
-youtubeUrl: ""
+amazonTag: ''
+facebookUrl: ''
+pinterestUrl: ''
+youtubeUrl: ''
 homepageTitle: TechTroveSell | Smart Tech Reviews, Buying Guides and Comparisons
 homepageDescription: Independent technology reviews, practical buying guides, product comparisons and curated Amazon affiliate recommendations.
 heroHeading: Smart tech. Honest reviews. Better buying decisions.
