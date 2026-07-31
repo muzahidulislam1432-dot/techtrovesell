@@ -2,7 +2,7 @@ backend:
   name: github
   repo: muzahidulislam1432-dot/techtrovesell
   branch: main
-  base_url: base_url: https://sveltia-cms-auth.muzahidulislam1432.workers.dev
+  base_url: https://sveltia-cms-auth.muzahidulislam1432.workers.dev
   auth_endpoint: auth
 
 media_folder: public/uploads
