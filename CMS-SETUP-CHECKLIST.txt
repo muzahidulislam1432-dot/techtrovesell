@@ -1,0 +1,25 @@
+TECHTROVESELL V3 CMS — ONE-TIME ACTIVATION
+
+1. Upload this project to the existing GitHub repository.
+2. Confirm the Cloudflare Pages deployment is green.
+3. Deploy the official Sveltia CMS Authenticator to Cloudflare Workers.
+4. Create a GitHub OAuth application.
+5. Callback URL: YOUR-WORKER-URL/callback
+6. In the Worker, add:
+   GITHUB_CLIENT_ID
+   GITHUB_CLIENT_SECRET (encrypted)
+   ALLOWED_DOMAINS = techtrovesell.com, www.techtrovesell.com
+7. In public/admin/config.yml replace:
+   https://YOUR-AUTH-WORKER.workers.dev
+   with the real Worker URL.
+8. Commit the edit.
+9. Open https://techtrovesell.com/admin/
+10. Sign in with GitHub.
+
+NORMAL PUBLISHING AFTER SETUP
+
+- New Review -> complete the form -> upload image -> paste SiteStripe link -> Publish
+- New Buying Guide -> write with the rich-text editor -> Publish
+- New Comparison -> add both products and comparison rows -> Publish
+- Pages and Legal Policies -> edit whenever required
+- Website Settings -> edit homepage, tagline, business email and social links

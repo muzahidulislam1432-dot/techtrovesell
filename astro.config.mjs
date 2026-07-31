@@ -1,7 +1,6 @@
-import { defineConfig } from "astro/config";
-
+import { defineConfig } from 'astro/config';
 export default defineConfig({
-  site: "https://techtrovesell.com",
-  output: "static",
-  trailingSlash: "always"
+  site: 'https://techtrovesell.com',
+  output: 'static',
+  trailingSlash: 'always'
 });

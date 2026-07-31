@@ -1,0 +1,5 @@
+---
+import {getCollection,render} from 'astro:content';import BaseLayout from '../layouts/BaseLayout.astro';import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+export async function getStaticPaths(){const entries=await getCollection('pages');return entries.map(entry=>({params:{page:entry.data.slug},props:{entry}}))}const {entry}=Astro.props;const {Content}=await render(entry);const d=entry.data;
+---
+<BaseLayout title={`${d.title} | TechTroveSell`} description={d.seoDescription} canonical={`https://techtrovesell.com/${d.slug}/`}><Header/><main class="legal-page container"><p class="eyebrow">TechTroveSell</p><h1>{d.title}</h1><article class="content-body"><Content/></article></main><Footer/></BaseLayout>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const deals = (await getCollection('deals'))
+  .filter((entry) => entry.data.status === 'published')
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+---
+<BaseLayout title="Technology Deals | TechTroveSell" description="Curated technology offers with clear affiliate disclosure and verified retailer details.">
+  <Header />
+  <main>
+    <section class="archive-hero">
+      <div class="container">
+        <Breadcrumbs items={[{ label: 'Deals', href: '/deals/' }]} />
+        <p class="eyebrow">Deals</p>
+        <h1>Curated technology offers.</h1>
+        <p>Prices and availability can change. Confirm current information on Amazon before purchasing.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container archive-grid">
+        {deals.length ? deals.map((deal) => (
+          <article class="archive-card">
+            <img src={deal.data.image} alt={deal.data.imageAlt} />
+            <div>
+              <p class="eyebrow">{deal.data.dealLabel}</p>
+              <h2>{deal.data.title}</h2>
+              <p>{deal.data.excerpt}</p>
+              {deal.data.expiryNote && <small>{deal.data.expiryNote}</small>}
+              <p><a class="button button--primary" href={deal.data.amazonUrl} rel="nofollow sponsored noopener">Check on Amazon</a></p>
+            </div>
+          </article>
+        )) : (
+          <div class="empty-state">
+            <h2>No verified deals published yet.</h2>
+            <p>Add and publish deals from the CMS after checking current Amazon details.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
