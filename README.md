@@ -1,4 +1,4 @@
-# TechTroveSell v3.0 — Professional CMS Edition
+# TechTroveSell v3.1 — Professional Publication Front End + CMS
 
 A Git-backed Astro affiliate publishing website designed for:
 
@@ -92,3 +92,15 @@ The included policy pages are professional starting templates, not personalized 
 ## AdSense
 
 `public/ads.txt` is a placeholder. Add the real publisher line only after Google provides it.
+
+## v3.1 front-end upgrade
+
+- Publication-style homepage
+- Premium editorial navigation and footer
+- Featured-story layout
+- Responsive review cards and category sections
+- Professional review article template
+- Sticky article navigation and Amazon CTA card
+- Review and Organization structured data
+- Mobile-first responsive design
+- Existing Sveltia CMS authentication preserved

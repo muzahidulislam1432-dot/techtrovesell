@@ -1,6 +1,35 @@
 ---
-import {getCollection,render} from 'astro:content';import BaseLayout from '../../layouts/BaseLayout.astro';import Header from '../../components/Header.astro';import Footer from '../../components/Footer.astro';import Breadcrumbs from '../../components/Breadcrumbs.astro';
-export async function getStaticPaths(){const entries=(await getCollection('reviews')).filter(x=>x.data.status==='published');return entries.map(entry=>({params:{slug:entry.data.slug},props:{entry}}))}
-const {entry}=Astro.props;const {Content}=await render(entry);const d=entry.data;
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+export async function getStaticPaths(){
+  const entries=(await getCollection('reviews')).filter(x=>x.data.status==='published');
+  return entries.map(entry=>({params:{slug:entry.data.slug},props:{entry}}));
+}
+const {entry}=Astro.props;
+const {Content}=await render(entry);
+const d=entry.data;
+const articleSchema={
+  '@context':'https://schema.org','@type':'Review','headline':d.title,'description':d.excerpt,
+  'image':`https://techtrovesell.com${d.image}`,'datePublished':d.publishedAt?.toISOString(),
+  'dateModified':(d.updatedAt||d.publishedAt)?.toISOString(),
+  'author':{'@type':'Organization','name':'TechTroveSell Editorial Team'},
+  'publisher':{'@type':'Organization','name':'TechTroveSell','logo':{'@type':'ImageObject','url':'https://techtrovesell.com/images/techtrovestore-profile.png'}},
+  'itemReviewed':{'@type':'Product','name':d.title,'brand':d.brand?{'@type':'Brand','name':d.brand}:undefined}
+};
 ---
-<BaseLayout title={d.seoTitle||`${d.title} Review | TechTroveSell`} description={d.seoDescription||d.excerpt} canonical={`https://techtrovesell.com/reviews/${d.slug}/`} type="article"><Header/><main><section class="review-hero"><div class="container"><Breadcrumbs items={[{label:'Reviews',href:'/reviews/'},{label:d.title,href:`/reviews/${d.slug}/`}]}/></div><div class="container review-hero-grid"><div><p class="eyebrow">{d.category} review</p><span class="review-badge">{d.badge}</span><h1>{d.title}</h1><p class="review-lead">{d.excerpt}</p><div class="hero-actions"><a class="button button--primary" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a><a class="button button--ghost" href="#verdict">Read verdict</a></div><p class="inline-disclosure">As an Amazon Associate, we earn from qualifying purchases.</p></div><div class="review-image"><img src={d.image} alt={d.imageAlt}/></div></div></section><section class="section"><div class="container review-layout"><article><section class="review-panel" id="verdict"><p class="eyebrow">Quick verdict</p><h2>{d.verdict}</h2></section><section class="pros-cons-grid"><div class="review-panel pros-panel"><h2>Pros</h2><ul>{d.pros.map(x=><li>{x}</li>)}</ul></div><div class="review-panel cons-panel"><h2>Cons</h2><ul>{d.cons.map(x=><li>{x}</li>)}</ul></div></section><section class="review-panel"><h2>Key features</h2><ul>{d.features.map(x=><li>{x}</li>)}</ul></section><section class="review-panel"><h2>Specifications</h2><div class="spec-table">{d.specs.map(x=><div><strong>{x.label}</strong><span>{x.value}</span></div>)}</div></section><section class="review-panel"><h2>Who should consider it</h2><p>{d.bestFor}</p></section><section class="review-panel"><h2>Who should avoid it</h2><p>{d.avoidIf}</p></section><section class="review-panel content-body"><Content/></section></article><aside><div class="sticky-card"><img src={d.image} alt={d.imageAlt}/><h2>{d.title}</h2><p>{d.excerpt}</p><a class="button button--primary button--full" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a></div></aside></div></section></main><Footer/></BaseLayout>
+<BaseLayout title={d.seoTitle||`${d.title} Review | TechTroveSell`} description={d.seoDescription||d.excerpt} canonical={`https://techtrovesell.com/reviews/${d.slug}/`} type="article" image={`https://techtrovesell.com${d.image}`} schema={articleSchema}>
+<Header/><main id="main-content">
+<section class="article-hero"><div class="container"><Breadcrumbs items={[{label:'Reviews',href:'/reviews/'},{label:d.title,href:`/reviews/${d.slug}/`}]}/><div class="article-hero-grid"><div><p class="kicker">{d.category} review</p><span class="review-badge">{d.badge}</span><h1>{d.title}</h1><p class="article-deck">{d.excerpt}</p><div class="article-byline"><span>By TechTroveSell Editorial Team</span><span>Independent analysis</span></div><div class="hero-actions"><a class="button button--amazon" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a><a class="button button--secondary" href="#verdict">Jump to verdict</a></div><p class="inline-disclosure">We may earn a commission from qualifying purchases. Our editorial conclusions remain independent.</p></div><div class="article-hero-image"><img src={d.image} alt={d.imageAlt}/></div></div></div></section>
+<section class="article-jump"><div class="container article-jump-inner"><strong>In this review</strong><a href="#verdict">Verdict</a><a href="#pros-cons">Pros & cons</a><a href="#features">Features</a><a href="#specifications">Specifications</a><a href="#full-review">Full review</a></div></section>
+<section class="section"><div class="container review-layout"><article class="article-main">
+<section class="verdict-box" id="verdict"><span class="story-label">TechTrove verdict</span><h2>{d.verdict}</h2><div class="verdict-audience"><div><strong>Best for</strong><p>{d.bestFor}</p></div><div><strong>Skip it if</strong><p>{d.avoidIf}</p></div></div></section>
+<section class="pros-cons-grid" id="pros-cons"><div class="review-panel pros-panel"><h2>What we like</h2><ul>{d.pros.map(x=><li>{x}</li>)}</ul></div><div class="review-panel cons-panel"><h2>What to consider</h2><ul>{d.cons.map(x=><li>{x}</li>)}</ul></div></section>
+<section class="review-panel" id="features"><p class="eyebrow">At a glance</p><h2>Key features</h2><ul class="feature-list">{d.features.map(x=><li>{x}</li>)}</ul></section>
+<section class="review-panel" id="specifications"><p class="eyebrow">Technical details</p><h2>Specifications</h2><div class="spec-table">{d.specs.map(x=><div><strong>{x.label}</strong><span>{x.value}</span></div>)}</div></section>
+<section class="review-panel content-body" id="full-review"><Content/></section>
+{d.faqs?.length>0 && <section class="review-panel"><p class="eyebrow">FAQ</p><h2>Frequently asked questions</h2><div class="faq-list">{d.faqs.map(f=><details><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
+</article><aside><div class="sticky-card"><img src={d.image} alt={d.imageAlt}/><span class="story-label">{d.badge}</span><h2>{d.title}</h2><p>{d.excerpt}</p><a class="button button--amazon button--full" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a><small>Price and availability can change. Verify details at Amazon.</small></div></aside></div></section>
+</main><Footer/></BaseLayout>

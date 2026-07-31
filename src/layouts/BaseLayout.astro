@@ -1,11 +1,49 @@
 ---
 import '../styles/global.css';
-const { title, description, canonical='https://techtrovesell.com/', type='website' } = Astro.props;
-const schema={"@context":"https://schema.org","@type":"Organization","name":"TechTroveSell","url":"https://techtrovesell.com"};
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  type = 'website',
+  image = 'https://techtrovesell.com/images/techtrovestore-cover.png',
+  schema
+} = Astro.props;
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TechTroveSell',
+  alternateName: 'TechTroveStore',
+  url: 'https://techtrovesell.com',
+  logo: 'https://techtrovesell.com/images/techtrovestore-profile.png',
+  description: 'Independent technology reviews, comparisons and buying guides.'
+};
 ---
-<!doctype html><html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta name="theme-color" content="#07111f"/>
-<meta property="og:type" content={type}/><meta property="og:site_name" content="TechTroveSell"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content="https://techtrovesell.com/images/og-cover.svg"/>
-<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content={title}/><meta name="twitter:description" content={description}/>
-<script type="application/ld+json" set:html={JSON.stringify(schema)}></script><title>{title}</title></head><body><slot/></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#07111f" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/images/techtrovestore-profile.png" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="TechTroveSell" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify(baseSchema)}></script>
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>}
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

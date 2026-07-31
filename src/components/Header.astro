@@ -1,6 +1,44 @@
-<header class="site-header"><div class="announcement">Independent tech reviews, comparisons and smarter buying guides.</div><div class="container nav-shell">
-<a class="brand" href="/"><span class="brand-mark">T</span><span><strong>TechTrove</strong><em>Sell</em></span></a>
-<button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
-<nav id="primary-nav" class="primary-nav"><a href="/reviews/">Reviews</a><a href="/buying-guides/">Buying Guides</a><a href="/comparisons/">Comparisons</a><a href="/deals/">Deals</a><a href="/categories/">Categories</a><a href="/search/">Search</a></nav>
-<a class="nav-cta" href="/admin/">CMS Login</a></div></header>
-<script>const b=document.querySelector('.menu-button'),n=document.querySelector('.primary-nav');b?.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));n?.classList.toggle('is-open')});</script>
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/reviews/', label: 'Reviews' },
+  { href: '/buying-guides/', label: 'Buying Guides' },
+  { href: '/comparisons/', label: 'Comparisons' },
+  { href: '/deals/', label: 'Deals' },
+  { href: '/categories/', label: 'Categories' }
+];
+---
+<header class="site-header">
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Independent technology research and practical buying advice.</span>
+      <div class="utility-links">
+        <a href="/editorial-policy/">How we review</a>
+        <a href="/affiliate-disclosure/">Affiliate disclosure</a>
+      </div>
+    </div>
+  </div>
+  <div class="container nav-shell">
+    <a class="brand" href="/" aria-label="TechTroveSell home">
+      <img src="/images/techtrovestore-profile.png" alt="" width="52" height="52" />
+      <span class="brand-copy"><strong>TechTrove</strong><em>Sell</em><small>Smart tech, clearly explained</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      {links.map((link) => <a class:list={[path.startsWith(link.href) && 'is-active']} href={link.href}>{link.label}</a>)}
+    </nav>
+    <div class="nav-actions">
+      <a class="search-link" href="/search/" aria-label="Search TechTroveSell">⌕ <span>Search</span></a>
+      <a class="nav-cta" href="/admin/">CMS</a>
+    </div>
+  </div>
+</header>
+<script>
+  const button = document.querySelector('.menu-button');
+  const nav = document.querySelector('.primary-nav');
+  button?.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('is-open');
+  });
+</script>
