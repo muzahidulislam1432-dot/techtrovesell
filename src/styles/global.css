@@ -23,10 +23,10 @@
 }
 
 .hero-copy h1 {
-  font-size: clamp(3.4rem, 6vw, 5.8rem) !important;
-  line-height: 0.96 !important;
-  max-width: 700px;
-  margin-bottom: 24px;
+    font-size: clamp(3.2rem, 5vw, 4.8rem) !important;
+    line-height: 0.92 !important;
+    max-width: 620px;
+    margin-bottom: 20px;
 }
 
 .hero-summary {
@@ -56,8 +56,8 @@
     gap: 36px;
   }
 
-  .hero-copy h1 {
-    font-size: clamp(3rem, 8vw, 4.8rem) !important;
+ .hero-copy h1 {
+    font-size: clamp(2.8rem, 4.5vw, 4rem) !important;
   }
 
   .hero-visual img {
@@ -72,9 +72,9 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.7rem, 12vw, 4rem) !important;
+    font-size: clamp(2.4rem, 10vw, 3.2rem) !important;
     line-height: 1 !important;
-  }
+}
 
   .hero-publication-grid {
     gap: 28px;
