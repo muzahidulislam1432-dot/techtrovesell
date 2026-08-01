@@ -23,14 +23,16 @@
 }
 
 .hero-title {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 0 18px !important;
-  font-size: clamp(2rem, 3vw, 3.35rem) !important;
-  line-height: 1.05 !important;
-  letter-spacing: -0.035em !important;
-  font-weight: 800 !important;
-  white-space: nowrap !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 18px !important;
+
+    font-size: clamp(1.8rem, 2.4vw, 2.9rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 800 !important;
+
+    white-space: nowrap !important;
 }
 
 .hero-title span {
