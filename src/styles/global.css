@@ -20,3 +20,20 @@
   margin-left: 0;
   font-style: normal;
 }
+/* Hero image bottom alignment */
+.hero-publication-grid{
+    align-items:end !important;
+}
+
+.hero-visual{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:flex-end !important;
+    height:100%;
+}
+
+.hero-visual img{
+    display:block;
+    margin-top:auto;
+    vertical-align:bottom;
+}
