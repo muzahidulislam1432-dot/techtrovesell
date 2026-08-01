@@ -140,3 +140,29 @@
     padding: 0 12px !important;
   }
 }
+/* Final desktop title correction */
+@media (min-width: 701px) {
+  .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-title {
+    width: 100% !important;
+    max-width: calc(100vw - 80px) !important;
+    margin: 0 auto 18px !important;
+    padding: 0 !important;
+
+    font-size: clamp(1.35rem, 1.85vw, 2rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.025em !important;
+    font-weight: 800 !important;
+
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  .hero-title span {
+    display: inline !important;
+  }
+}
