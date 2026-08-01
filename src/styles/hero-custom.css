@@ -1,0 +1,98 @@
+/* TechTroveSell homepage hero overrides */
+
+.hero-publication {
+  padding: 22px 0 40px !important;
+}
+
+.hero-publication-grid {
+  min-height: auto !important;
+  grid-template-columns: 0.92fr 1.08fr !important;
+  align-items: center !important;
+  gap: 48px !important;
+}
+
+.hero-copy .kicker {
+  margin: 0 0 16px !important;
+}
+
+.hero-title {
+  margin: 0 0 22px !important;
+  max-width: 600px !important;
+  font-size: clamp(2.65rem, 3.8vw, 3.7rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 800 !important;
+}
+
+.hero-title span {
+  display: block !important;
+}
+
+.hero-title .title-black {
+  color: #07111f !important;
+}
+
+.hero-title .title-orange {
+  color: #ff7a00 !important;
+}
+
+.hero-title .title-blue {
+  color: #1769e0 !important;
+}
+
+.hero-summary {
+  max-width: 590px !important;
+  margin: 0 0 26px !important;
+}
+
+.hero-visual {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.hero-visual img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1000px) {
+  .hero-publication {
+    padding: 20px 0 36px !important;
+  }
+
+  .hero-publication-grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  .hero-title {
+    max-width: 680px !important;
+    font-size: clamp(2.5rem, 7vw, 3.6rem) !important;
+  }
+
+  .hero-visual img {
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-publication {
+    padding: 18px 0 30px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .hero-publication-grid {
+    gap: 26px !important;
+  }
+}
