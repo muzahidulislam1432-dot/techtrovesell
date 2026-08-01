@@ -13,9 +13,10 @@
 }
 
 .hero-copy {
-  width: 100% !important;
-  max-width: 1220px !important;
-  text-align: center !important;
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
 }
 
 .hero-copy .kicker {
@@ -23,18 +24,18 @@
 }
 
 .hero-title {
-  width: 100% !important;
-  max-width: 1220px !important;
-  margin: 0 auto 18px !important;
-  padding: 0 20px !important;
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto 18px !important;
+    padding: 0 24px !important;
 
-  font-size: clamp(1.7rem, 2.35vw, 2.75rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.025em !important;
-  font-weight: 800 !important;
+    font-size: clamp(2rem, 3vw, 3.4rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 800 !important;
 
-  white-space: nowrap !important;
-  text-align: center !important;
+    white-space: nowrap !important;
+    text-align: center !important;
 }
 
 .hero-title span {
