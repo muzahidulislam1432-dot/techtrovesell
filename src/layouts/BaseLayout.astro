@@ -10,22 +10,49 @@ const {
   schema
 } = Astro.props;
 const baseSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'TechTroveSell',
-  alternateName: 'TechTroveStore',
-  url: 'https://techtrovesell.com',
-  logo: 'https://techtrovesell.com/images/techtrovestore-profile.png',
-  description: 'Independent technology reviews, comparisons and buying guides.'
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://techtrovesell.com/#organization",
+
+  name: "TechTroveSell",
+  alternateName: "TechTroveStore",
+
+  url: "https://techtrovesell.com",
+
+  logo: {
+    "@type": "ImageObject",
+    url: "https://techtrovesell.com/images/techtrovestore-profile.png"
+  },
+
+  image: "https://techtrovesell.com/images/techtrovestore-cover.png",
+
+  description:
+    "Independent technology reviews, buying guides, product comparisons, AI tools, and Amazon affiliate recommendations.",
+
+  foundingDate: "2026"
+};
+const websiteSchema = {
+  "@context": "https://schema.org",
+
+  "@type": "WebSite",
+
+  "@id": "https://techtrovesell.com/#website",
+
+  url: "https://techtrovesell.com",
+
+  name: "TechTroveSell",
+
+  publisher: {
+    "@id": "https://techtrovesell.com/#organization"
+  },
+
+  inLanguage: "en"
 };
 ---
 <!doctype html>
 <html lang="en">
   <head>
 <meta name="twitter:image" content={image} />
-
-<script type="application/ld+json" set:html={JSON.stringify(baseSchema)}></script>
-{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>}
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR53ZZ9LVC"></script>
@@ -66,8 +93,22 @@ const baseSchema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <script type="application/ld+json" set:html={JSON.stringify(baseSchema)}></script>
-    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>}
+    <script
+  type="application/ld+json"
+  set:html={JSON.stringify(baseSchema)}
+></script>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(websiteSchema)}
+></script>
+
+{schema && (
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+  ></script>
+)}
     <title>{title}</title>
   </head>
   <body>
