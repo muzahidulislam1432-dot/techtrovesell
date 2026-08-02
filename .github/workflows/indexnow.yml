@@ -1,0 +1,30 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for Cloudflare deployment
+        run: sleep 180
+
+      - name: Submit sitemap to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d "{
+            \"host\": \"techtrovesell.com\",
+            \"key\": \"$INDEXNOW_KEY\",
+            \"keyLocation\": \"https://techtrovesell.com/${INDEXNOW_KEY}.txt\",
+            \"urlList\": [
+              \"https://techtrovesell.com/\",
+              \"https://techtrovesell.com/sitemap.xml\"
+            ]
+          }"
