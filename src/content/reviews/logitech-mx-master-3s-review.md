@@ -102,21 +102,6 @@ The Logitech MX Master 3S remains one of the strongest productivity mice availab
 
 For professionals who spend long hours working at a computer, it continues to be one of the easiest mice to recommend.
 
-# Specifications
-
-| Feature | Details |
-| --- | --- |
-| Brand | Logitech |
-| Model | MX Master 3S |
-| Connectivity | Bluetooth & Logi Bolt Receiver |
-| Sensor | Darkfield High Precision |
-| Maximum DPI | Up to 8000 DPI |
-| Buttons | 7 Programmable Buttons |
-| Battery | Rechargeable Lithium Battery |
-| Charging | USB-C |
-| Multi-Device Support | Up to 3 Devices |
-| Operating Systems | Windows, macOS, Linux, ChromeOS |
-
 # Design & Build Quality
 
 The first thing you'll notice is the premium construction.
