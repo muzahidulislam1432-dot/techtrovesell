@@ -1,5 +1,5 @@
 ---
-title: 'Logitech MX Master 3S Review (2026): Still the Best Productivity Mouse?'
+title: Logitech MX Master 3S Review (2026)
 slug: logitech-mx-master-3s-review
 status: published
 brand: Logitech
