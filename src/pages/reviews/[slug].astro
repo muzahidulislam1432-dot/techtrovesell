@@ -22,7 +22,90 @@ const articleSchema={
 ---
 <BaseLayout title={d.seoTitle||`${d.title} Review | TechTroveSell`} description={d.seoDescription||d.excerpt} canonical={`https://techtrovesell.com/reviews/${d.slug}/`} type="article" image={`https://techtrovesell.com${d.image}`} schema={articleSchema}>
 <Header/><main id="main-content">
-<section class="article-hero"><div class="container"><Breadcrumbs items={[{label:'Reviews',href:'/reviews/'},{label:d.title,href:`/reviews/${d.slug}/`}]}/><div class="article-hero-grid"><div><p class="kicker">{d.category} review</p><span class="review-badge">{d.badge}</span><h1>{d.title}</h1><p class="article-deck">{d.excerpt}</p><div class="article-byline"><span>By TechTroveSell Editorial Team</span><span>Independent analysis</span></div><div class="hero-actions"><a class="button button--amazon" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a><a class="button button--secondary" href="#verdict">Jump to verdict</a></div><p class="inline-disclosure">We may earn a commission from qualifying purchases. Our editorial conclusions remain independent.</p></div><div class="article-hero-image"><img src={d.image} alt={d.imageAlt}/></div></div></div></section>
+<section class="article-hero">
+  <div class="container">
+
+    <Breadcrumbs items={[
+      {label:'Reviews',href:'/reviews/'},
+      {label:d.title,href:`/reviews/${d.slug}/`}
+    ]} />
+
+    <div class="article-header">
+
+      <p class="kicker">{d.category} review</p>
+
+      <span class="review-badge">
+        {d.badge}
+      </span>
+
+      <h1>{d.title}</h1>
+
+      <p class="article-deck">
+        {d.excerpt}
+      </p>
+
+     <div class="article-byline">
+  <span>By TechTroveSell Editorial Team</span>
+
+  <span>
+    Updated {d.updatedAt?.toLocaleDateString() || d.publishedAt?.toLocaleDateString()}
+  </span>
+
+  <span>
+    Independent Review
+  </span>
+</div>
+<div class="review-rating">
+
+  <span class="stars">
+    ★★★★★
+  </span>
+
+  <strong>4.8 / 5</strong>
+
+  <span class="rating-text">
+    Excellent for Productivity
+  </span>
+
+</div>
+    </div>
+
+    <div class="article-hero-image">
+   <img
+  src={d.image}
+  alt={d.imageAlt}
+  class="hero-review-image"
+  loading="eager"
+  width="1200"
+  height="675"
+/>
+    </div>
+    <div class="hero-actions">
+
+   <a
+  class="button button--amazon"
+  href={d.amazonUrl}
+  target="_blank"
+  rel="nofollow sponsored noopener"
+>
+        Check Price on Amazon
+      </a>
+
+ <a
+  class="button button--secondary"
+  href="#verdict"
+>
+    Jump to Verdict
+</a>
+
+    </div>
+
+    <p class="inline-disclosure">
+      We may earn a commission from qualifying purchases. Our editorial conclusions remain independent.
+    </p>
+
+  </div>
+</section>
 <section class="article-jump"><div class="container article-jump-inner"><strong>In this review</strong><a href="#verdict">Verdict</a><a href="#pros-cons">Pros & cons</a><a href="#features">Features</a><a href="#specifications">Specifications</a><a href="#full-review">Full review</a></div></section>
 <section class="section"><div class="container review-layout"><article class="article-main">
 <section class="verdict-box" id="verdict"><span class="story-label">TechTrove verdict</span><h2>{d.verdict}</h2><div class="verdict-audience"><div><strong>Best for</strong><p>{d.bestFor}</p></div><div><strong>Skip it if</strong><p>{d.avoidIf}</p></div></div></section>
@@ -31,5 +114,39 @@ const articleSchema={
 <section class="review-panel" id="specifications"><p class="eyebrow">Technical details</p><h2>Specifications</h2><div class="spec-table">{d.specs.map(x=><div><strong>{x.label}</strong><span>{x.value}</span></div>)}</div></section>
 <section class="review-panel content-body" id="full-review"><Content/></section>
 {d.faqs?.length>0 && <section class="review-panel"><p class="eyebrow">FAQ</p><h2>Frequently asked questions</h2><div class="faq-list">{d.faqs.map(f=><details><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
-</article><aside><div class="sticky-card"><img src={d.image} alt={d.imageAlt}/><span class="story-label">{d.badge}</span><h2>{d.title}</h2><p>{d.excerpt}</p><a class="button button--amazon button--full" href={d.amazonUrl} rel="nofollow sponsored noopener">Check price on Amazon</a><small>Price and availability can change. Verify details at Amazon.</small></div></aside></div></section>
-</main><Footer/></BaseLayout>
+</article><aside><div class="sticky-card"><img
+   src={d.image}
+  alt={d.imageAlt}
+  loading="lazy"
+  width="1200"
+  height="675"
+/>
+
+<span class="story-label">
+  {d.badge}
+</span>
+
+<a
+  class="button button--amazon button--full"
+  href={d.amazonUrl}
+  target="_blank"
+  rel="nofollow sponsored noopener"
+>
+  View Today's Price on Amazon
+</a>
+
+<small>
+Price and availability can change. Verify details at Amazon.
+</small>
+
+</div>
+</aside>
+
+</div>
+</section>
+
+</main>
+
+<Footer/>
+
+</BaseLayout>
