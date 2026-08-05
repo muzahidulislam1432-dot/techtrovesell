@@ -1,6 +1,12 @@
----
+import '../styles/variables.css';
 import '../styles/global.css';
+import '../styles/header.css';
+import '../styles/homepage.css';
+import '../styles/review.css';
+import '../styles/footer.css';
+import '../styles/responsive.css';
 import '../styles/hero-custom.css';
+---
 const {
   title,
   description,
@@ -109,7 +115,7 @@ const websiteSchema = {
     set:html={JSON.stringify(schema)}
   ></script>
 )}
-    <title>{title}</title>
+
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
