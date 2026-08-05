@@ -1,11 +1,13 @@
+@import "./variables.css";
+@import "./header.css";
+@import "./homepage.css";
+@import "./review.css";
+@import "./footer.css";
+@import "./responsive.css";
+@import "./hero-custom.css";
 /* ==========================================================
    TechTroveSell Global Styles
    Version 2.0
-   ========================================================== */
-
-
-/* ==========================================================
-   ROOT VARIABLES
    ========================================================== */
 
 /* ==========================================================
