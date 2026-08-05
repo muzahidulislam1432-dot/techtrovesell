@@ -1,1 +1,93 @@
+/* ==========================================
+   TABLET (1000px)
+========================================== */
 
+@media (max-width:1000px){
+
+    /* Navigation */
+
+    .primary-nav{
+        position:absolute;
+        top:110px;
+        left:20px;
+        right:20px;
+
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:18px;
+
+        background:#fff;
+
+        border:1px solid var(--line);
+        border-radius:14px;
+
+        box-shadow:var(--shadow);
+    }
+
+    .primary-nav.is-open{
+        display:flex;
+    }
+
+    .menu-button{
+        display:block;
+        margin-left:auto;
+    }
+
+    .nav-actions .search-link span{
+        display:none;
+    }
+
+
+    /* Homepage */
+
+    .hero-publication-grid,
+    .lead-story-grid,
+    .editorial-columns{
+        grid-template-columns:1fr;
+    }
+
+    .hero-publication-grid{
+        gap:36px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .story-card-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .comparison-rail{
+        border-left:0;
+        border-top:1px solid var(--line);
+
+        padding-left:0;
+        padding-top:36px;
+    }
+
+
+    /* Reviews */
+
+    .review-layout{
+        grid-template-columns:1fr;
+    }
+
+    aside{
+        order:-1;
+    }
+
+    .sticky-card{
+        position:static;
+    }
+
+
+    /* Footer */
+
+    .footer-top{
+        grid-template-columns:1.3fr 1fr 1fr;
+    }
+
+}
