@@ -1,152 +1,193 @@
-/* TechTroveSell — final homepage hero */
+/* ==================================================
+   ARTICLE / REVIEW HERO
+   TechTroveSell
+================================================== */
 
-.hero-publication {
-  padding: 18px 0 42px !important;
+
+/* ==============================================
+   HERO SECTION
+============================================== */
+
+.archive-hero,
+.article-hero{
+
+    background:linear-gradient(
+        135deg,
+        #f5f9ff,
+        #fff8f1
+    );
+
+    border-bottom:1px solid var(--line);
+
+    padding:70px 0;
 }
 
-.hero-publication-grid {
-  min-height: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 0 !important;
+
+/* ==============================================
+   ARTICLE HEADER
+============================================== */
+
+.article-header{
+
+    max-width:920px;
+
+    margin:0 auto;
+
+    text-align:center;
 }
 
-.hero-copy {
-  width: min(100%, 1280px) !important;
-  max-width: 1280px !important;
-  margin: 0 auto !important;
-  text-align: center !important;
+
+/* ==============================================
+   CATEGORY
+============================================== */
+
+.article-category{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:var(--blue);
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
 }
 
-.hero-copy .kicker {
-  margin: 0 0 14px !important;
+
+/* ==============================================
+   TITLE
+============================================== */
+
+.article-title{
+
+    margin-bottom:20px;
+
+    color:var(--ink);
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    line-height:1;
+
+    letter-spacing:-.05em;
 }
 
-/* Desktop title */
-.hero-title {
-  width: 100% !important;
-  max-width: 1280px !important;
-  margin: 0 auto 18px !important;
-  padding: 0 16px !important;
-  box-sizing: border-box !important;
 
-  font-size: clamp(1.35rem, 2.05vw, 2.25rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.025em !important;
-  font-weight: 800 !important;
+/* ==============================================
+   SUMMARY
+============================================== */
 
-  white-space: nowrap !important;
-  text-align: center !important;
+.article-summary{
+
+    max-width:760px;
+
+    margin:0 auto 32px;
+
+    color:var(--muted);
+
+    font-size:1.15rem;
+
+    line-height:1.8;
 }
 
-.hero-title span {
-  display: inline !important;
+
+/* ==============================================
+   META
+============================================== */
+
+.article-meta{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:38px;
+
+    color:var(--muted);
+
+    font-size:.85rem;
 }
 
-.title-black {
-  color: #07111f !important;
+
+/* ==============================================
+   HERO IMAGE
+============================================== */
+
+.article-image{
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
 }
 
-.title-orange {
-  color: #ff7600 !important;
+.article-image img{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
 }
 
-.title-blue {
-  color: #1769e0 !important;
+
+/* ==============================================
+   ACTION BUTTONS
+============================================== */
+
+.article-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-top:36px;
+
+    flex-wrap:wrap;
 }
 
-.hero-summary {
-  width: min(100%, 780px) !important;
-  max-width: 780px !important;
-  margin: 0 auto 26px !important;
-  font-size: 1.05rem !important;
-  line-height: 1.55 !important;
-  text-align: center !important;
+
+/* ==============================================
+   RATING BADGE
+============================================== */
+
+.hero-rating{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:28px;
+
+    padding:10px 18px;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:999px;
+
+    font-weight:800;
+
+    color:var(--ink);
 }
 
-.hero-actions {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 12px !important;
-  margin-bottom: 30px !important;
-}
+.hero-rating strong{
 
-.editorial-promises {
-  width: 100% !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  gap: 24px !important;
-  margin: 0 0 40px !important;
-}
+    color:var(--orange);
 
-.hero-visual {
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-}
-
-.hero-visual img {
-  display: block !important;
-  width: min(100%, 820px) !important;
-  max-width: 820px !important;
-  height: auto !important;
-  margin: 0 auto !important;
-}
-
-/* Tablet */
-@media (max-width: 1000px) {
-  .hero-publication {
-    padding: 14px 0 34px !important;
-  }
-
-  .hero-title {
-    font-size: clamp(1.25rem, 2.5vw, 1.8rem) !important;
-    padding: 0 12px !important;
-  }
-
-  .hero-summary {
-    padding: 0 18px !important;
-  }
-
-  .hero-visual img {
-    max-width: 720px !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .hero-publication {
-    padding: 12px 0 28px !important;
-  }
-
-  .hero-title {
-    max-width: 620px !important;
-    white-space: normal !important;
-    font-size: clamp(1.75rem, 7vw, 2.35rem) !important;
-    line-height: 1.08 !important;
-    padding: 0 14px !important;
-  }
-
-  .hero-summary {
-    font-size: 1rem !important;
-  }
-
-  .hero-actions {
-    flex-wrap: wrap !important;
-    padding: 0 14px !important;
-  }
-
-  .editorial-promises {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 12px 22px !important;
-    padding: 0 14px !important;
-    margin-bottom: 30px !important;
-  }
+    font-size:1rem;
 }
