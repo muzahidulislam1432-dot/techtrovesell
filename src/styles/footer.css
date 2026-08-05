@@ -1,1 +1,105 @@
+/* ==================================================
+   SITE FOOTER
+================================================== */
 
+.site-footer{
+    background:var(--ink);
+    color:#c2ccda;
+    padding-top:65px;
+}
+
+
+/* ==================================================
+   FOOTER TOP
+================================================== */
+
+.footer-top{
+    display:grid;
+    grid-template-columns:1.5fr repeat(3,1fr);
+    gap:55px;
+    padding-bottom:45px;
+}
+
+
+/* ==================================================
+   FOOTER BRAND
+================================================== */
+
+.brand--footer .brand-copy strong{
+    color:#fff;
+}
+
+.brand--footer .brand-copy em{
+    color:var(--orange);
+}
+
+.footer-brand p{
+    max-width:370px;
+    color:#9eacbe;
+}
+
+.footer-email{
+    color:#fff;
+    font-weight:750;
+}
+
+
+/* ==================================================
+   FOOTER COLUMNS
+================================================== */
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.footer-column h3{
+    color:#fff;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.footer-column a{
+    font-size:.84rem;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+
+/* ==================================================
+   AFFILIATE NOTICE
+================================================== */
+
+.affiliate-notice{
+    padding-block:18px;
+
+    border-top:1px solid #25364c;
+    border-bottom:1px solid #25364c;
+
+    color:#9eacbe;
+    font-size:.77rem;
+}
+
+.affiliate-notice strong{
+    color:#fff;
+}
+
+
+/* ==================================================
+   FOOTER BOTTOM
+================================================== */
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+
+    padding-block:23px;
+
+    color:#8291a5;
+    font-size:.75rem;
+}
