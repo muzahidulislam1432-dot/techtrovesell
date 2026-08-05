@@ -1,1 +1,30 @@
+:root{
 
+    --ink:#07111f;
+    --ink-2:#0d1b2e;
+
+    --paper:#ffffff;
+    --canvas:#f5f7fa;
+    --soft:#eef3f8;
+
+    --line:#dbe3ec;
+
+    --text:#172337;
+    --muted:#637083;
+
+    --blue:#1769e0;
+    --blue-dark:#0d4eb3;
+
+    --orange:#ff7a00;
+    --orange-dark:#d95f00;
+
+    --green:#147a55;
+    --red:#b64545;
+
+    --radius:18px;
+
+    --shadow:0 20px 50px rgba(7,17,31,.10);
+
+    --max:1220px;
+
+}
