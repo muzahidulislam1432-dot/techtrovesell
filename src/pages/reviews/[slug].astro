@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedReviews from "../../components/RelatedReviews.astro";
 export async function getStaticPaths(){
   const entries=(await getCollection('reviews')).filter(x=>x.data.status==='published');
   return entries.map(entry=>({params:{slug:entry.data.slug},props:{entry}}));
@@ -144,6 +145,8 @@ Price and availability can change. Verify details at Amazon.
 
 </div>
 </section>
+
+<RelatedReviews currentSlug={d.slug} />
 
 </main>
 
