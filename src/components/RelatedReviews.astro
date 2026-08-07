@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+
+const { currentSlug } = Astro.props;
+
+const allReviews = await getCollection("reviews");
+
+const relatedReviews = allReviews
+  .filter((review) => review.data.slug !== currentSlug)
+  .slice(0, 3);
+---
+
+<section class="related-reviews">
+
+  <div class="section-heading">
+    <p class="eyebrow">Continue reading</p>
+    <h2>Related Reviews</h2>
+  </div>
+
+  {
+    relatedReviews.length > 0 ? (
+
+      <div class="related-grid">
+
+        {relatedReviews.map((review) => (
+
+          <a
+            class="related-card"
+            href={`/reviews/${review.data.slug}/`}
+          >
+
+            <img
+              src={review.data.image}
+              alt={review.data.imageAlt}
+            />
+
+            <div>
+
+              <p class="related-category">
+                {review.data.category}
+              </p>
+
+              <h3>
+                {review.data.title}
+              </h3>
+
+            </div>
+
+          </a>
+
+        ))}
+
+      </div>
+
+    ) : (
+
+      <div class="related-empty">
+
+        <h3>
+          More reviews coming soon
+        </h3>
+
+        <p>
+          We're building an independent library of technology
+          reviews and buying guides. Check back soon for more.
+        </p>
+
+        <a
+          href="/reviews/"
+          class="button button--primary"
+        >
+          Browse All Reviews
+        </a>
+
+      </div>
+
+    )
+  }
+
+</section>
