@@ -3,7 +3,7 @@ title: "Logitech MX Master 3S vs Logitech MX Anywhere 3S"
 
 slug: "mx-master-3s-vs-mx-anywhere-3s"
 
-status: "draft"
+status: "published"
 
 publishedAt: 2026-08-08
 
@@ -19,23 +19,26 @@ seoDescription: "Compare Logitech MX Master 3S vs MX Anywhere 3S including comfo
 
 winner: "Logitech MX Master 3S"
 
+productA: "Logitech MX Master 3S"
+productB: "Logitech MX Anywhere 3S"
+
 products:
 
-  - name: "Logitech MX Master 3S"
-    image: "/images/reviews/logitech-mx-master-3s.webp"
-    score: 4.9
-    comfort: "Excellent"
-    battery: "Up to 70 Days"
-    connectivity: "Bluetooth + Logi Bolt"
-    weight: "141 g"
-    amazon: "#"
+- name: "Logitech MX Master 3S"
+  image: "/images/reviews/logitech-mx-master-3s.jpg"
+  score: 4.9
+  comfort: "Excellent"
+  battery: "Up to 70 Days"
+  connectivity: "Bluetooth + Logi Bolt"
+  weight: "141 g"
+  amazon: "#"
 
-  - name: "Logitech MX Anywhere 3S"
-    image: "/images/reviews/logitech-mx-anywhere-3s.webp"
-    score: 4.7
-    comfort: "Very Good"
-    battery: "Up to 70 Days"
-    connectivity: "Bluetooth + Logi Bolt"
-    weight: "99 g"
-    amazon: "#"
+- name: "Logitech MX Anywhere 3S"
+  image: "/images/reviews/logitech-mx-anywhere-3s.jpg"
+  score: 4.7
+  comfort: "Very Good"
+  battery: "Up to 70 Days"
+  connectivity: "Bluetooth + Logi Bolt"
+  weight: "99 g"
+  amazon: "#"
 ---
