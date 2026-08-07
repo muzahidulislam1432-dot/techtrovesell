@@ -41,72 +41,52 @@ const { title = "Product Comparison", products = [] } = Astro.props;
 
       </thead>
 
-      <tbody>
+<tbody>
 
-        <tr>
+  {products[0]?.features?.map((row, index) => (
 
-          <td>Comfort</td>
+    <tr>
 
-          {products.map(product => (
-            <td>{product.comfort}</td>
-          ))}
+      <td>{row.label}</td>
 
-        </tr>
+      {products.map(product => (
 
-        <tr>
+        <td>
 
-          <td>Battery</td>
+          {product.features[index].value}
 
-          {products.map(product => (
-            <td>{product.battery}</td>
-          ))}
+        </td>
 
-        </tr>
+      ))}
 
-        <tr>
+    </tr>
 
-          <td>Connectivity</td>
+  ))}
 
-          {products.map(product => (
-            <td>{product.connectivity}</td>
-          ))}
+  <tr>
 
-        </tr>
+    <td></td>
 
-        <tr>
+    {products.map(product => (
 
-          <td>Weight</td>
+      <td>
 
-          {products.map(product => (
-            <td>{product.weight}</td>
-          ))}
+        <a
+          href={product.amazon}
+          class="button button--amazon"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+          Check Amazon
+        </a>
 
-        </tr>
+      </td>
 
-        <tr>
+    ))}
 
-          <td></td>
+  </tr>
 
-          {products.map(product => (
-
-            <td>
-
-              <a
-                href={product.amazon}
-                class="button button--amazon"
-                target="_blank"
-                rel="nofollow sponsored noopener"
-              >
-                Check Amazon
-              </a>
-
-            </td>
-
-          ))}
-
-        </tr>
-
-      </tbody>
+</tbody>
 
     </table>
 
