@@ -6,7 +6,11 @@ const { currentSlug } = Astro.props;
 const allReviews = await getCollection("reviews");
 
 const relatedReviews = allReviews
-  .filter((review) => review.data.slug !== currentSlug)
+  .filter(
+    review =>
+      review.data.status === "published" &&
+      review.data.slug !== currentSlug
+  )
   .slice(0, 3);
 ---
 
