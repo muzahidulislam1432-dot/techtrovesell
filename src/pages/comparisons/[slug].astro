@@ -169,41 +169,10 @@ const d = entry.data;
             Feature Comparison
           </h2>
 
-          <table class="comparison-table">
-
-            <thead>
-
-              <tr>
-
-                <th>Feature</th>
-
-                <th>{d.productA}</th>
-
-                <th>{d.productB}</th>
-
-              </tr>
-
-            </thead>
-
-            <tbody>
-
-              {d.rows.map((r) => (
-
-                <tr>
-
-                  <td>{r.feature}</td>
-
-                  <td>{r.a}</td>
-
-                  <td>{r.b}</td>
-
-                </tr>
-
-              ))}
-
-            </tbody>
-
-          </table>
+<ComparisonTable
+  title="Feature Comparison"
+  products={d.products}
+/>
 
         </div>
 
