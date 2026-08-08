@@ -1,59 +1,96 @@
 ---
-const { title = "Product Comparison", products = [] } = Astro.props;
+const { products = [] } = Astro.props;
 ---
-<section class="comparison-section">
 
-  <div class="section-heading">
-    <p class="eyebrow">Compare products</p>
-    <h2>{title}</h2>
-  </div>
+<table class="comparison-table">
 
-  <div class="comparison-wrapper">
-
-    <table class="comparison-table">
-
-      <thead>
-
-        <tr>
-
-          <th>Feature</th>
-
-          {products.map(product => (
-
-            <th>
-
-              <img
-                src={product.image}
-                alt={product.name}
-              />
-
-              <h3>{product.name}</h3>
-
-              <p class="comparison-score">
-                ⭐ {product.score}/5
-              </p>
-
-            </th>
-
-          ))}
-
-        </tr>
-
-      </thead>
-
-<tbody>
-
-  {products[0]?.features?.map((row, index) => (
+  <thead>
 
     <tr>
 
-      <td>{row.label}</td>
+      <th>Feature</th>
+
+      {products.map(product => (
+
+        <th>
+
+          <img
+            src={product.image}
+            alt={product.name}
+          />
+
+          <h3>{product.name}</h3>
+
+          <p class="comparison-score">
+            ⭐ {product.score}/5
+          </p>
+
+        </th>
+
+      ))}
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <td>Comfort</td>
+
+      {products.map(product => (
+        <td>{product.comfort}</td>
+      ))}
+
+    </tr>
+
+    <tr>
+
+      <td>Battery</td>
+
+      {products.map(product => (
+        <td>{product.battery}</td>
+      ))}
+
+    </tr>
+
+    <tr>
+
+      <td>Connectivity</td>
+
+      {products.map(product => (
+        <td>{product.connectivity}</td>
+      ))}
+
+    </tr>
+
+    <tr>
+
+      <td>Weight</td>
+
+      {products.map(product => (
+        <td>{product.weight}</td>
+      ))}
+
+    </tr>
+
+    <tr>
+
+      <td></td>
 
       {products.map(product => (
 
         <td>
 
-          {product.features[index].value}
+          <a
+            href={product.amazon}
+            class="button button--amazon"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            Check Amazon
+          </a>
 
         </td>
 
@@ -61,34 +98,9 @@ const { title = "Product Comparison", products = [] } = Astro.props;
 
     </tr>
 
-  ))}
+  </tbody>
 
-  <tr>
-
-    <td></td>
-
-    {products.map(product => (
-
-      <td>
-
-        <a
-          href={product.amazon}
-          class="button button--amazon"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          Check Amazon
-        </a>
-
-      </td>
-
-    ))}
-
-  </tr>
-
-</tbody>
-
-    </table>
+</table>
 
   </div>
 
