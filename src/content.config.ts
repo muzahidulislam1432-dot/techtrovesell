@@ -53,27 +53,58 @@ const guides = defineCollection({
 });
 
 const comparisons = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/comparisons' }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/comparisons"
+  }),
+
   schema: z.object({
+
     title: z.string(),
     slug: z.string(),
     status: commonStatus,
+
     category: z.string(),
-    productA: z.string(),
-    productB: z.string(),
     excerpt: z.string(),
+
     winner: z.string(),
-    rows: z.array(z.object({
-      feature: z.string(),
-      a: z.string(),
-      b: z.string()
-    })).default([]),
-    amazonUrlA: z.string().optional(),
-    amazonUrlB: z.string().optional(),
+
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
-    publishedAt: z.coerce.date().optional()
+
+    publishedAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional(),
+
+    products: z.array(
+
+      z.object({
+
+        name: z.string(),
+
+        image: z.string(),
+
+        score: z.number(),
+
+        comfort: z.string(),
+
+        battery: z.string(),
+
+        connectivity: z.string(),
+
+        weight: z.string(),
+
+        amazon: z.string(),
+
+        price: z.string().optional(),
+
+        tagline: z.string().optional()
+
+      })
+
+    )
+
   })
+
 });
 
 const deals = defineCollection({
