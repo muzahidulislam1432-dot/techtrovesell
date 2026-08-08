@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "siteName": {
+      "type": "string"
+    },
+    "socialBrandName": {
+      "default": "TechTroveStore",
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "businessEmail": {
+      "type": "string"
+    },
+    "amazonTag": {
+      "type": "string"
+    },
+    "facebookUrl": {
+      "type": "string"
+    },
+    "pinterestUrl": {
+      "type": "string"
+    },
+    "youtubeUrl": {
+      "type": "string"
+    },
+    "homepageTitle": {
+      "type": "string"
+    },
+    "homepageDescription": {
+      "type": "string"
+    },
+    "heroHeading": {
+      "type": "string"
+    },
+    "heroText": {
+      "type": "string"
+    },
+    "heroImage": {
+      "default": "/images/techtrovestore-cover.png",
+      "type": "string"
+    },
+    "primaryCtaText": {
+      "default": "Explore reviews",
+      "type": "string"
+    },
+    "primaryCtaUrl": {
+      "default": "/reviews/",
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "siteName",
+    "tagline",
+    "businessEmail",
+    "homepageTitle",
+    "homepageDescription",
+    "heroHeading",
+    "heroText"
+  ]
+}

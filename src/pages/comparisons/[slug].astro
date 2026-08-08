@@ -1,5 +1,159 @@
 ---
-import {getCollection,render} from 'astro:content';import BaseLayout from '../../layouts/BaseLayout.astro';import Header from '../../components/Header.astro';import Footer from '../../components/Footer.astro';
-export async function getStaticPaths(){const entries=(await getCollection('comparisons')).filter(x=>x.data.status==='published');return entries.map(entry=>({params:{slug:entry.data.slug},props:{entry}}))}const {entry}=Astro.props;const {Content}=await render(entry);const d=entry.data;
+import { getCollection, render } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ComparisonTable from "../../components/ComparisonTable.astro";
+
+export async function getStaticPaths() {
+  const entries = (await getCollection("comparisons"))
+    .filter((x) => x.data.status === "published");
+
+  return entries.map((entry) => ({
+    params: {
+      slug: entry.data.slug,
+    },
+    props: {
+      entry,
+    },
+  }));
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await render(entry);
+
+const d = entry.data;
 ---
-<BaseLayout title={d.seoTitle||`${d.title} | TechTroveSell`} description={d.seoDescription||d.excerpt} canonical={`https://techtrovesell.com/comparisons/${d.slug}/`} type="article"><Header/><main><section class="archive-hero"><div class="container"><p class="eyebrow">{d.category} comparison</p><h1>{d.productA} <span class="vs">vs</span> {d.productB}</h1><p>{d.excerpt}</p></div></section><section class="section"><div class="container comparison-detail"><div class="comparison-winner"><span>Quick result</span><h2>{d.winner}</h2></div><div class="comparison-table"><div class="comparison-row comparison-row--head"><strong>Feature</strong><strong>{d.productA}</strong><strong>{d.productB}</strong></div>{d.rows.map(r=><div class="comparison-row"><strong>{r.feature}</strong><span>{r.a}</span><span>{r.b}</span></div>)}</div><article class="review-panel content-body"><Content/></article></div></section></main><Footer/></BaseLayout>
+<BaseLayout
+  title={d.seoTitle || `${d.title} | TechTroveSell`}
+  description={d.seoDescription || d.excerpt}
+  canonical={`https://techtrovesell.com/comparisons/${d.slug}/`}
+  type="article"
+>
+
+<Header />
+
+<main id="main-content">
+
+      <section class="article-hero">
+
+    <div class="container">
+
+      <p class="eyebrow">
+        {d.category} Comparison
+      </p>
+
+      <h1>
+        {d.products[0].name} vs {d.products[1].name}
+      </h1>
+
+      <p class="article-summary">
+        {d.excerpt}
+      </p>
+
+    </div>
+
+  </section>
+
+    <section>
+
+    <div class="container">
+
+      <div class="product-grid">
+
+        {d.products.map((product) => (
+
+          <div class="product-card">
+
+            <img
+              src={product.image}
+              alt={product.name}
+              class="product-image"
+            />
+
+            <h2>{product.name}</h2>
+
+            <div class="product-rating">
+              ⭐ {product.score}/5
+            </div>
+
+            <div class="product-price">
+              {product.price}
+            </div>
+
+            <p class="product-tagline">
+              {product.tagline}
+            </p>
+
+            <a
+              href={product.amazon}
+              class="button button--amazon"
+              target="_blank"
+              rel="nofollow sponsored noopener"
+            >
+              Check Amazon Price
+            </a>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </section>
+
+    <section>
+
+    <div class="container">
+
+      <div class="review-panel">
+
+        <p class="eyebrow">
+          Quick Result
+        </p>
+
+        <h2>Winner</h2>
+
+        <p>{d.winner}</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+    <section>
+
+    <div class="container">
+
+      <ComparisonTable
+        products={d.products}
+      />
+
+    </div>
+
+  </section>
+
+    <section>
+
+    <div class="container">
+
+      <div class="review-panel content-body">
+
+        <Content />
+
+      </div>
+
+    </div>
+
+  </section>
+
+  </main>
+
+<Footer />
+
+</BaseLayout>

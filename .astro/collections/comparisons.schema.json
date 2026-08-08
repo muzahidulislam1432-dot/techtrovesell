@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "status": {
+      "default": "draft",
+      "type": "string",
+      "enum": [
+        "draft",
+        "published"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "winner": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "comfort": {
+            "type": "string"
+          },
+          "battery": {
+            "type": "string"
+          },
+          "connectivity": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "amazon": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "tagline": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "image",
+          "score",
+          "comfort",
+          "battery",
+          "connectivity",
+          "weight",
+          "amazon"
+        ]
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "slug",
+    "category",
+    "excerpt",
+    "winner",
+    "products"
+  ]
+}
