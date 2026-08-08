@@ -39,7 +39,74 @@
     color:#fff;
 }
 
+/* ==================================================
+ARTICLE HEADER
+================================================== */
 
+.article-byline{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+
+    margin:22px 0 10px;
+
+    font-size:.95rem;
+    color:var(--muted);
+}
+
+.article-byline span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.article-byline strong{
+    color:var(--ink);
+    font-weight:700;
+}
+
+.article-byline strong{
+    color:var(--ink);
+}
+
+.review-rating{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    margin:12px 0 34px;
+}
+
+.stars{
+    color:#ffb300;
+    font-size:1.35rem;
+    letter-spacing:3px;
+}
+
+.review-rating strong{
+    font-size:1.6rem;
+    font-weight:800;
+    color:var(--ink);
+}
+
+.rating-text{
+    padding:7px 14px;
+
+    background:#fff7df;
+
+    border:1px solid #ffd36b;
+    border-radius:999px;
+
+    color:#a56a00;
+
+    font-size:.88rem;
+    font-weight:700;
+}
 /* ==================================================
    REVIEW LAYOUT
 ================================================== */
@@ -60,39 +127,51 @@
 ================================================== */
 
 .verdict-box{
-    margin-bottom:24px;
-    padding:32px;
+    margin-bottom:32px;
+    padding:48px;
 
     background:#fff;
 
     border:1px solid var(--line);
-    border-top:5px solid var(--blue);
+    border-top:6px solid var(--blue);
 
-    border-radius:18px;
+    border-radius:22px;
+
+    box-shadow:0 12px 35px rgba(7,17,31,.05);
 }
 
 .verdict-box h2{
+    margin-bottom:18px;
+
     color:var(--ink);
 
-    font-size:1.9rem;
-
-    line-height:1.25;
+    font-size:2rem;
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-.03em;
 }
 
 .verdict-audience{
     display:grid;
+
     grid-template-columns:1fr 1fr;
 
-    gap:20px;
+    gap:28px;
 
-    margin-top:26px;
-    padding-top:22px;
+    margin-top:34px;
+    padding-top:28px;
 
     border-top:1px solid var(--line);
 }
 
 .verdict-audience strong{
+    display:block;
+
+    margin-bottom:8px;
+
     color:var(--ink);
+
+    font-size:1rem;
 }
 
 .verdict-audience p{
@@ -107,39 +186,108 @@
 .pros-cons-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:28px;
 }
 
 .review-panel{
-    margin-bottom:24px;
-    padding:32px;
+    margin-bottom:30px;
+
+    padding:34px;
 
     background:#fff;
 
     border:1px solid var(--line);
 
-    border-radius:18px;
+    border-radius:22px;
+
+    box-shadow:0 8px 24px rgba(7,17,31,.04);
 }
 
 .pros-panel{
-    border-top:4px solid var(--green);
+    border-top:5px solid #22c55e;
+}
+
+.pros-panel li::before{
+    content:"✓";
+
+    position:absolute;
+    left:0;
+    top:15px;
+
+    color:#22c55e;
+
+    font-size:1rem;
+    font-weight:900;
 }
 
 .cons-panel{
-    border-top:4px solid var(--red);
+    border-top:5px solid #ef4444;
+}
+
+.cons-panel li::before{
+    content:"✕";
+
+    position:absolute;
+    left:0;
+    top:15px;
+
+    color:#ef4444;
+
+    font-size:.95rem;
+    font-weight:900;
 }
 
 .review-panel h2{
+    margin:0;
+
+    font-size:1.4rem;
+    line-height:1.2;
+    letter-spacing:-.03em;
+
     color:var(--ink);
-    letter-spacing:-.02em;
 }
 
 .review-panel ul{
-    padding-left:20px;
+    list-style:none;
+
+    margin:24px 0 0;
+    padding:0;
 }
 
 .review-panel li{
-    margin:.6rem 0;
+    position:relative;
+
+    padding:14px 0 14px 34px;
+
+    line-height:1.7;
+
+    border-bottom:1px solid #edf2f7;
+}
+
+.review-panel li:last-child{
+    border-bottom:none;
+}
+
+.pros-panel li::before{
+    content:"✓";
+
+    position:absolute;
+    left:0;
+
+    color:#22c55e;
+
+    font-weight:900;
+}
+
+.cons-panel li::before{
+    content:"–";
+
+    position:absolute;
+    left:0;
+
+    color:#ef4444;
+
+    font-weight:900;
 }
 
 
@@ -180,69 +328,172 @@
 ================================================== */
 
 .spec-table{
-    border-top:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+
+    margin-top:26px;
+
+    border:1px solid var(--line);
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#fff;
 }
 
 .spec-table > div{
     display:grid;
-    grid-template-columns:1fr 1.5fr;
+    grid-template-columns:180px 1fr;
 
-    gap:20px;
+    align-items:center;
 
-    padding:13px 0;
+    gap:28px;
+
+    padding:16px 22px;
 
     border-bottom:1px solid var(--line);
+    box-shadow:0 6px 18px rgba(7,17,31,.04);
+}
+
+.spec-table > div:last-child{
+    border-bottom:none;
+}
+
+.spec-table > div:nth-child(even){
+    background:#f8fafc;
 }
 
 .spec-table strong{
+    font-size:.95rem;
+    font-weight:800;
+
     color:var(--ink);
 }
 
 .spec-table span{
-    color:var(--muted);
+    color:var(--ink);
+
+    font-size:1rem;
+    font-weight:500;
+
+    line-height:1.5;
 }
 
 /* ==================================================
    STICKY SIDEBAR
 ================================================== */
 
+
 .sticky-card{
     position:sticky;
     top:180px;
 
+    padding:34px;
+
     background:#fff;
 
     border:1px solid var(--line);
-    border-radius:18px;
+    border-radius:22px;
 
-    padding:32px;
-    margin:0;
+    box-shadow:0 10px 28px rgba(7,17,31,.05);
 }
 
-.sticky-card img{
+.sticky-card .button{
     width:100%;
-    aspect-ratio:1.25 / 1;
-    object-fit:cover;
+    min-width:0;
+    height:52px;
 
-    border-radius:12px;
-    margin-bottom:18px;
+    font-size:1rem;
+    font-weight:800;
+
+    border-radius:14px;
 }
 
+.sticky-card .button--amazon{
+    white-space:nowrap;
+}
 .sticky-card h2{
-    font-size:1.25rem;
-    line-height:1.25;
+    margin:14px 0 10px;
+
     color:var(--ink);
+
+    font-size:1.35rem;
+    line-height:1.25;
+    letter-spacing:-.03em;
+    margin-bottom:16px;
 }
 
-.sticky-card p,
-.sticky-card small{
+.sticky-card p{
     color:var(--muted);
-    font-size:.82rem;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
 .sticky-card small{
     display:block;
-    margin-top:12px;
+
+    margin-top:22px;
+
+    color:#7b8796;
+
+    font-size:.82rem;
+}
+
+.sidebar-rating{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin:18px 0;
+
+    color:#ffb300;
+
+    font-size:1.15rem;
+}
+
+.sidebar-rating strong{
+    color:var(--ink);
+
+    font-size:1.25rem;
+}
+
+.sidebar-summary{
+    margin:18px 0 24px;
+
+    color:var(--muted);
+
+    line-height:1.75;
+}
+
+.sidebar-highlights{
+    margin:24px 0;
+
+    padding:0;
+
+    list-style:none;
+}
+
+.sidebar-highlights li{
+    position:relative;
+
+    padding-left:28px;
+
+    margin:14px 0;
+
+    color:#324255;
+
+    line-height:1.6;
+}
+
+.sidebar-highlights li::before{
+    content:"✓";
+
+    position:absolute;
+    left:0;
+
+    color:#22c55e;
+
+    font-weight:900;
 }
 
 
@@ -252,35 +503,111 @@
 
 .content-body{
     color:#344257;
+    font-size:1.1rem;
+    line-height:1.9;
 }
 
-.content-body h2,
-.content-body h3{
+.content-body h2{
+    margin:80px 0 24px;
+
     color:var(--ink);
-    margin-top:2.2rem;
-    letter-spacing:-.02em;
+
+    font-size:2.15rem;
+    line-height:1.15;
+    letter-spacing:-.04em;
+
+    padding-bottom:12px;
+    border-bottom:2px solid var(--line);
 }
 
-.content-body p,
+.content-body > h2:first-child{
+    margin-top:0;
+}
+
+
+.content-body h3{
+    margin:56px 0 18px;
+
+    color:var(--ink);
+
+    font-size:1.55rem;
+    line-height:1.2;
+}
+
+.content-body p{
+    margin:0 0 1.6rem;
+
+    font-size:1.08rem;
+    line-height:1.95;
+
+    color:#415166;
+}
+
 .content-body li{
-    font-size:1.02rem;
-    line-height:1.82;
+    margin:.7rem 0;
+
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.content-body ul,
+.content-body ol{
+    margin:24px 0;
+    padding-left:28px;
 }
 
 .content-body a{
     color:var(--blue);
-    text-decoration:underline;
+    text-decoration:none;
+
+border-bottom:1px solid rgba(37,99,235,.25);
+    font-weight:600;
+    transition:.2s ease;
+}
+
+.content-body a:hover{
+    color:var(--blue-dark);
+
+    border-bottom-color:var(--blue-dark);
 }
 
 .content-body blockquote{
-    margin:2rem 0;
-    padding:20px 25px;
+    margin:48px 0;
+    padding:30px 36px;
 
     background:#fff8f1;
 
-    border-left:4px solid var(--orange);
+    border-left:5px solid var(--orange);
+
+    border-radius:14px;
+
+    font-size:1.12rem;
+    line-height:1.8;
+    font-style:italic;
+
+    color:#374151;
 }
 
+.content-body img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    margin:36px auto;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 28px rgba(7,17,31,.08);
+}
+
+.content-body hr{
+    margin:60px 0;
+
+    border:none;
+
+    border-top:1px solid var(--line);
+}
 
 /* ==================================================
    FAQ
@@ -307,349 +634,8 @@
 
     background:var(--soft);
 
-   /* ==================================================
-   RELATED REVIEWS
-================================================== */
-
-.related-reviews{
-    margin:80px 0;
-}
-
-.related-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:28px;
-}
-
-.related-card{
-    display:flex;
-    flex-direction:column;
-
-    background:#fff;
-
-    border:1px solid var(--line);
-    border-radius:22px;
-
-    overflow:hidden;
-
-    transition:.25s ease;
-
-    text-decoration:none;
-}
-
-.related-card:hover{
-    transform:translateY(-6px);
-
-    box-shadow:0 18px 40px rgba(7,17,31,.08);
-}
-
-.related-card img{
-    width:100%;
-    aspect-ratio:16/10;
-
-    object-fit:cover;
-}
-
-.related-card div{
-    padding:22px;
-}
-
-.related-category{
-    margin:0 0 8px;
-
-    font-size:.75rem;
-    font-weight:700;
-
-    color:var(--blue);
-
-    text-transform:uppercase;
-    letter-spacing:.08em;
-}
-
-.related-card h3{
-    margin:0;
-
-    color:var(--ink);
-
-    font-size:1.28rem;
-    line-height:1.3;
-}
-
-.related-empty{
-
-    padding:48px;
-
-    background:#fff;
-
-    border:1px solid var(--line);
-    border-radius:22px;
-
-    text-align:center;
-}
-
-.related-empty h3{
-    margin-bottom:12px;
-}
-
-.related-empty p{
-    max-width:600px;
-    margin:0 auto 30px;
-
-    color:var(--muted);
-}
-
     border:1px dashed #a9b5c4;
     border-radius:16px;
 
     text-align:center;
-}
-
-/* ==================================================
-   RELATED REVIEWS
-================================================== */
-
-.related-reviews{
-    margin:80px 0;
-}
-
-.related-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:28px;
-}
-
-.related-card{
-    display:flex;
-    flex-direction:column;
-
-    background:#fff;
-
-    border:1px solid var(--line);
-    border-radius:22px;
-
-    overflow:hidden;
-
-    transition:.25s ease;
-
-    text-decoration:none;
-}
-
-.related-card:hover{
-    transform:translateY(-6px);
-
-    box-shadow:0 18px 40px rgba(7,17,31,.08);
-}
-
-.related-card img{
-    width:100%;
-    aspect-ratio:16/10;
-
-    object-fit:cover;
-}
-
-.related-card div{
-    padding:22px;
-}
-
-.related-category{
-    margin:0 0 8px;
-
-    font-size:.75rem;
-    font-weight:700;
-
-    color:var(--blue);
-
-    text-transform:uppercase;
-    letter-spacing:.08em;
-}
-
-.related-card h3{
-    margin:0;
-
-    color:var(--ink);
-
-    font-size:1.28rem;
-    line-height:1.3;
-}
-
-.related-empty{
-
-    padding:48px;
-
-    background:#fff;
-
-    border:1px solid var(--line);
-    border-radius:22px;
-
-    text-align:center;
-}
-
-.related-empty h3{
-    margin-bottom:12px;
-}
-
-.related-empty p{
-    max-width:600px;
-    margin:0 auto 30px;
-
-    color:var(--muted);
-}
-
-/* ==========================================
-   COMPARISON TABLE
-========================================== */
-
-.comparison-section{
-    margin:80px 0;
-}
-
-.comparison-wrapper{
-    overflow-x:auto;
-
-    background:#fff;
-
-    border:1px solid var(--line);
-
-    border-radius:22px;
-
-    box-shadow:0 10px 30px rgba(7,17,31,.05);
-}
-
-.comparison-table{
-    width:100%;
-
-    border-collapse:collapse;
-
-    min-width:760px;
-}
-
-.comparison-table th,
-.comparison-table td{
-    padding:24px;
-
-    text-align:center;
-
-    border-bottom:1px solid var(--line);
-}
-
-.comparison-table th:first-child,
-.comparison-table td:first-child{
-    text-align:left;
-
-    font-weight:700;
-
-    color:var(--ink);
-
-    background:#fafbfd;
-
-    width:190px;
-}
-
-.comparison-table thead th{
-    background:#fff;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1;
-}
-
-.comparison-table th img{
-    width:110px;
-
-    height:110px;
-
-    object-fit:contain;
-
-    margin-bottom:14px;
-}
-
-.comparison-table h3{
-    margin:0 0 8px;
-
-    font-size:1.15rem;
-
-    line-height:1.3;
-}
-
-.comparison-score{
-    color:#f59e0b;
-
-    font-weight:700;
-
-    margin:0;
-}
-
-.comparison-table tbody tr:hover{
-    background:#f8fbff;
-}
-
-.comparison-table .button{
-    width:100%;
-}
-
-/* =====================================
-   Comparison Product Cards
-===================================== */
-
-.comparison-products{
-  margin:3rem 0;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:2rem;
-}
-
-.product-card{
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  padding:28px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.05);
-  transition:.25s;
-}
-
-.product-card:hover{
-  transform:translateY(-6px);
-}
-
-.product-image{
-  width:220px;
-  max-width:100%;
-  margin:auto;
-}
-
-.product-card h2{
-  margin:20px 0 10px;
-}
-
-.product-rating{
-  font-size:20px;
-  font-weight:700;
-  color:#ff9800;
-}
-
-.product-price{
-  font-size:30px;
-  font-weight:800;
-  margin:10px 0;
-}
-
-.product-tagline{
-  color:#64748b;
-  margin-bottom:20px;
-}
-
-@media(max-width:768px){
-
-.product-grid{
-
-grid-template-columns:1fr;
-
-}
-
 }

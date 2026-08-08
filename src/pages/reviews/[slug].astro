@@ -4,7 +4,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import RelatedReviews from "../../components/RelatedReviews.astro";
 export async function getStaticPaths(){
   const entries=(await getCollection('reviews')).filter(x=>x.data.status==='published');
   return entries.map(entry=>({params:{slug:entry.data.slug},props:{entry}}));
@@ -46,9 +45,9 @@ const articleSchema={
       </p>
 
      <div class="article-byline">
-  <span>By TechTroveSell Editorial Team</span>
-
-  <span>
+<span>
+    By <strong>TechTroveSell Editorial Team</strong>
+</span>
     Updated {d.updatedAt?.toLocaleDateString() || d.publishedAt?.toLocaleDateString()}
   </span>
 
@@ -71,16 +70,7 @@ const articleSchema={
 </div>
     </div>
 
-    <div class="article-hero-image">
-   <img
-  src={d.image}
-  alt={d.imageAlt}
-  class="hero-review-image"
-  loading="eager"
-  width="1200"
-  height="675"
-/>
-    </div>
+   
     <div class="hero-actions">
 
    <a
@@ -105,27 +95,76 @@ const articleSchema={
       We may earn a commission from qualifying purchases. Our editorial conclusions remain independent.
     </p>
 
+     <div class="article-hero-image">
+   <img
+  src={d.image}
+  alt={d.imageAlt}
+  class="hero-review-image"
+  loading="eager"
+  width="1200"
+  height="675"
+/>
+    </div>
+
   </div>
 </section>
 <section class="article-jump"><div class="container article-jump-inner"><strong>In this review</strong><a href="#verdict">Verdict</a><a href="#pros-cons">Pros & cons</a><a href="#features">Features</a><a href="#specifications">Specifications</a><a href="#full-review">Full review</a></div></section>
 <section class="section"><div class="container review-layout"><article class="article-main">
 <section class="verdict-box" id="verdict"><span class="story-label">TechTrove verdict</span><h2>{d.verdict}</h2><div class="verdict-audience"><div><strong>Best for</strong><p>{d.bestFor}</p></div><div><strong>Skip it if</strong><p>{d.avoidIf}</p></div></div></section>
-<section class="pros-cons-grid" id="pros-cons"><div class="review-panel pros-panel"><h2>What we like</h2><ul>{d.pros.map(x=><li>{x}</li>)}</ul></div><div class="review-panel cons-panel"><h2>What to consider</h2><ul>{d.cons.map(x=><li>{x}</li>)}</ul></div></section>
+<section class="pros-cons-grid" id="pros-cons">
+
+    <div class="review-panel pros-panel">
+
+        <p class="eyebrow">Strengths</p>
+
+        <h2>What we like</h2>
+
+        <ul>
+            {d.pros.map(x => <li>{x}</li>)}
+        </ul>
+
+    </div>
+
+    <div class="review-panel cons-panel">
+
+        <p class="eyebrow">Limitations</p>
+
+        <h2>What to consider</h2>
+
+        <ul>
+            {d.cons.map(x => <li>{x}</li>)}
+        </ul>
+
+    </div>
+
+</section>
 <section class="review-panel" id="features"><p class="eyebrow">At a glance</p><h2>Key features</h2><ul class="feature-list">{d.features.map(x=><li>{x}</li>)}</ul></section>
 <section class="review-panel" id="specifications"><p class="eyebrow">Technical details</p><h2>Specifications</h2><div class="spec-table">{d.specs.map(x=><div><strong>{x.label}</strong><span>{x.value}</span></div>)}</div></section>
 <section class="review-panel content-body" id="full-review"><Content/></section>
 {d.faqs?.length>0 && <section class="review-panel"><p class="eyebrow">FAQ</p><h2>Frequently asked questions</h2><div class="faq-list">{d.faqs.map(f=><details><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
-</article><aside><div class="sticky-card"><img
-   src={d.image}
-  alt={d.imageAlt}
-  loading="lazy"
-  width="1200"
-  height="675"
-/>
+</article><aside>
+
+<div class="sticky-card">
 
 <span class="story-label">
   {d.badge}
 </span>
+
+<h2>{d.title}</h2>
+
+<div class="sidebar-rating">
+
+    ★★★★★
+
+    <strong>4.8 / 5</strong>
+
+</div>
+
+<p class="sidebar-summary">
+
+One of the best productivity mice available today, combining excellent ergonomics, quiet clicks and outstanding battery life.
+
+</p>
 
 <a
   class="button button--amazon button--full"
@@ -133,8 +172,22 @@ const articleSchema={
   target="_blank"
   rel="nofollow sponsored noopener"
 >
-  View Today's Price on Amazon
+  Check Amazon Price
 </a>
+
+<ul class="sidebar-highlights">
+
+<li>Excellent ergonomics</li>
+
+<li>Ultra-quiet buttons</li>
+
+<li>USB-C fast charging</li>
+
+<li>Multi-device support</li>
+
+<li>Outstanding battery life</li>
+
+</ul>
 
 <small>
 Price and availability can change. Verify details at Amazon.
@@ -145,8 +198,6 @@ Price and availability can change. Verify details at Amazon.
 
 </div>
 </section>
-
-<RelatedReviews currentSlug={d.slug} />
 
 </main>
 

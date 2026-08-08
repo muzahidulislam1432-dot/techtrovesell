@@ -15,32 +15,68 @@ const leadReview = reviews[0];
 <BaseLayout title={settings.homepageTitle} description={settings.homepageDescription} canonical="https://techtrovesell.com/">
   <Header />
   <main id="main-content">
-    <section class="hero-publication">
-      <div class="container hero-publication-grid">
-        <div class="hero-copy">
-          <p class="kicker">Independent reviews • Practical comparisons</p>
-<h1 class="hero-title">
-  <span class="title-black">Smart tech.</span>
-  <span class="title-orange">Honest reviews.</span>
-  <span class="title-blue">Better choice.</span>
-</h1>
-          <p class="hero-summary">{settings.heroText}</p>
-          <div class="hero-actions">
-            <a class="button button--primary" href={settings.primaryCtaUrl}>{settings.primaryCtaText}</a>
-            <a class="button button--secondary" href="/buying-guides/">Browse buying guides</a>
-          </div>
-          <div class="editorial-promises">
-            <span><b>01</b> Clear methodology</span>
-            <span><b>02</b> Honest limitations</span>
-            <span><b>03</b> Transparent affiliate links</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src={settings.heroImage} alt="TechTroveSell technology review publication" />
-        </div>
-      </div>
-    </section>
+  <section class="hero-publication">
 
+  <div class="container">
+
+    <div class="hero-copy">
+
+      <p class="kicker">
+        Independent Reviews • Practical Comparisons
+      </p>
+
+      <h1 class="hero-title">
+        <span class="title-black">Smart tech.</span>
+        <span class="title-orange">Honest reviews.</span>
+        <span class="title-blue">Better choice.</span>
+      </h1>
+
+    </div>
+
+    <div class="hero-visual">
+      <img
+        src={settings.heroImage}
+        alt="TechTroveSell Technology Publication"
+      />
+    </div>
+
+    <div class="hero-bottom">
+
+      <p class="hero-summary">
+        {settings.heroText}
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="button button--primary"
+          href={settings.primaryCtaUrl}>
+          {settings.primaryCtaText}
+        </a>
+
+        <a
+          class="button button--secondary"
+          href="/buying-guides/">
+          Browse buying guides
+        </a>
+
+      </div>
+
+      <div class="editorial-promises">
+
+        <span><b>01</b> Clear methodology</span>
+
+        <span><b>02</b> Honest limitations</span>
+
+        <span><b>03</b> Transparent affiliate links</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     <section class="topic-strip" aria-label="Popular categories">
       <div class="container topic-strip-inner">
         <span class="topic-label">Explore:</span>
