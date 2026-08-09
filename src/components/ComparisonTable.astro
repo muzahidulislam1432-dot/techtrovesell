@@ -2,106 +2,85 @@
 const { products = [] } = Astro.props;
 ---
 
+<div class="comparison-wrapper">
+
 <table class="comparison-table">
 
-  <thead>
+<thead>
 
-    <tr>
+<tr>
+<th>Feature</th>
 
-      <th>Feature</th>
+{products.map(product => (
+<th>
+<img src={product.image} alt={product.name} />
 
-      {products.map(product => (
+<h3>{product.name}</h3>
 
-        <th>
+<p class="comparison-score">
+⭐ {product.score}/5
+</p>
 
-          <img
-            src={product.image}
-            alt={product.name}
-          />
+</th>
+))}
 
-          <h3>{product.name}</h3>
+</tr>
 
-          <p class="comparison-score">
-            ⭐ {product.score}/5
-          </p>
+</thead>
 
-        </th>
+<tbody>
 
-      ))}
+<tr>
+<td>Comfort</td>
+{products.map(product => <td>{product.comfort}</td>)}
+</tr>
 
-    </tr>
+<tr>
+<td>Battery</td>
+{products.map(product => <td>{product.battery}</td>)}
+</tr>
 
-  </thead>
+<tr>
+<td>Connectivity</td>
+{products.map(product => <td>{product.connectivity}</td>)}
+</tr>
 
-  <tbody>
+<tr>
+<td>Weight</td>
+{products.map(product => <td>{product.weight}</td>)}
+</tr>
 
-    <tr>
+<tr>
+<td>Price</td>
+{products.map(product => <td>{product.price}</td>)}
+</tr>
 
-      <td>Comfort</td>
+<tr>
+<td></td>
 
-      {products.map(product => (
-        <td>{product.comfort}</td>
-      ))}
+{products.map(product => (
 
-    </tr>
+<td>
 
-    <tr>
+<a
+href={product.amazon}
+class="button button--amazon"
+target="_blank"
+rel="nofollow sponsored noopener"
+>
 
-      <td>Battery</td>
+Check Amazon
 
-      {products.map(product => (
-        <td>{product.battery}</td>
-      ))}
+</a>
 
-    </tr>
+</td>
 
-    <tr>
+))}
 
-      <td>Connectivity</td>
+</tr>
 
-      {products.map(product => (
-        <td>{product.connectivity}</td>
-      ))}
-
-    </tr>
-
-    <tr>
-
-      <td>Weight</td>
-
-      {products.map(product => (
-        <td>{product.weight}</td>
-      ))}
-
-    </tr>
-
-    <tr>
-
-      <td></td>
-
-      {products.map(product => (
-
-        <td>
-
-          <a
-            href={product.amazon}
-            class="button button--amazon"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            Check Amazon
-          </a>
-
-        </td>
-
-      ))}
-
-    </tr>
-
-  </tbody>
+</tbody>
 
 </table>
 
-  </div>
-
-</section>
+</div>
