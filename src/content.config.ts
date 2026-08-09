@@ -90,35 +90,7 @@ const comparisons = defineCollection({
         tagline: z.string().optional()
       })
     )
-
-      z.object({
-
-        name: z.string(),
-
-        image: z.string(),
-
-        score: z.number(),
-
-        comfort: z.string(),
-
-        battery: z.string(),
-
-        connectivity: z.string(),
-
-        weight: z.string(),
-
-        amazon: z.string(),
-
-        price: z.string().optional(),
-
-        tagline: z.string().optional()
-
-      })
-
-    )
-
-  })
-
+    })
 });
 
 const deals = defineCollection({
