@@ -55,9 +55,7 @@ const guides = defineCollection({
 const comparisons = defineCollection({
   loader: glob({
     pattern: '**/*.md',
-    base: './src/content/comparisons'
-    pattern: "**/*.md",
-    base: "./src/content/comparisons"
+    base: './src/content/comparisons"
   }),
 
   schema: z.object({
