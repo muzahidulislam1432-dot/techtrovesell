@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
@@ -25,6 +25,12 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 
 const d = entry.data;
+const relatedEntries = await Promise.all(
+  (d.relatedComparisons || []).map(async (slug) => {
+    const item = await getEntry("comparisons", slug);
+    return item;
+  })
+);
 ---
 <BaseLayout
   title={d.seoTitle || `${d.title} | TechTroveSell`}
@@ -110,6 +116,38 @@ const d = entry.data;
             </p>
           )}
 
+          {product.pros.length > 0 && (
+  <div class="comparison-pros">
+
+    <h4>✔ Pros</h4>
+
+    <ul>
+
+      {product.pros.map((pro) => (
+        <li>{pro}</li>
+      ))}
+
+    </ul>
+
+  </div>
+)}
+
+{product.cons.length > 0 && (
+  <div class="comparison-cons">
+
+    <h4>✖ Cons</h4>
+
+    <ul>
+
+      {product.cons.map((con) => (
+        <li>{con}</li>
+      ))}
+
+    </ul>
+
+  </div>
+)}
+
           <a
             href={product.amazon}
             class="button button--amazon"
@@ -144,24 +182,27 @@ const d = entry.data;
         🏆 Quick Verdict
       </div>
 
-      <h2 class="winner-title">
-        {d.winner}
-      </h2>
+<h2 class="winner-title">
+  {d.winnerTitle || d.winner}
+</h2>
 
       <div class="winner-score">
         ⭐ {d.products[0].score}/5
       </div>
 
-      <p class="winner-text">
-        Best choice for professionals who want maximum productivity,
-        comfort and customization.
-      </p>
+<p class="winner-text">
+  {d.winnerText}
+</p>
 
-      <ul class="winner-list">
-        <li>✔ Excellent ergonomics</li>
-        <li>✔ Advanced productivity features</li>
-        <li>✔ Best overall value</li>
-      </ul>
+<ul class="winner-list">
+
+{d.winnerPros.map((item) => (
+
+<li>✔ {item}</li>
+
+))}
+
+</ul>
 
       <a
         href={d.products[0].amazon}
@@ -186,8 +227,9 @@ const d = entry.data;
     <div class="container">
 
       <ComparisonTable
-        products={d.products}
-      />
+  products={d.products}
+  rows={d.rows}
+/>
 
     </div>
 
@@ -209,6 +251,98 @@ const d = entry.data;
     </div>
 
   </section>
+
+  {d.faqs.length > 0 && (
+
+<section class="comparison-faq">
+
+<div class="container">
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+<div class="faq-list">
+
+{d.faqs.map((faq) => (
+
+<details class="faq-item">
+
+<summary>
+
+{faq.question}
+
+</summary>
+
+<p>
+
+{faq.answer}
+
+</p>
+
+</details>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
+)}
+
+{relatedEntries.length > 0 && (
+
+<section class="related-comparisons">
+
+<div class="container">
+
+<h2 class="section-title">
+Related Comparisons
+</h2>
+
+<div class="related-grid">
+
+{relatedEntries.map((item) => (
+
+item && (
+
+<a
+href={`/comparisons/${item.data.slug}/`}
+class="related-card"
+>
+
+<img
+src={item.data.heroImage}
+alt={item.data.title}
+/>
+
+<h3>
+
+{item.data.title}
+
+</h3>
+
+<p>
+
+{item.data.excerpt}
+
+</p>
+
+</a>
+
+)
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
+)}
 
   </main>
 
@@ -390,5 +524,175 @@ text-align:center;
     box-shadow:0 18px 45px rgba(0,0,0,.12);
 }
 
+.comparison-pros,
+.comparison-cons{
+
+    margin:18px 0;
+
+}
+
+.comparison-pros h4{
+
+    color:#16a34a;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.comparison-cons h4{
+
+    color:#dc2626;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.comparison-pros ul,
+.comparison-cons ul{
+
+    margin:0;
+
+    padding-left:18px;
+
+}
+
+.comparison-pros li,
+.comparison-cons li{
+
+    margin-bottom:8px;
+
+    color:#4b5563;
+
+}
+
+/* ===========================
+   FAQ SECTION
+=========================== */
+
+.comparison-faq{
+
+margin:80px 0;
+
+}
+
+.faq-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.faq-item{
+
+border:1px solid #e5e7eb;
+
+border-radius:16px;
+
+padding:18px 22px;
+
+background:#fff;
+
+}
+
+.faq-item summary{
+
+cursor:pointer;
+
+font-weight:700;
+
+font-size:18px;
+
+color:#111827;
+
+}
+
+.faq-item p{
+
+margin-top:16px;
+
+line-height:1.7;
+
+color:#4b5563;
+
+}
+
+/* ===========================
+   RELATED COMPARISONS
+=========================== */
+
+.related-comparisons{
+
+margin:90px 0;
+
+}
+
+.related-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:28px;
+
+}
+
+.related-card{
+
+display:block;
+
+background:#fff;
+
+border:1px solid #e5e7eb;
+
+border-radius:18px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.related-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.08);
+
+}
+
+.related-card img{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+}
+
+.related-card h3{
+
+padding:20px 20px 10px;
+
+color:#111827;
+
+}
+
+.related-card p{
+
+padding:0 20px 24px;
+
+color:#6b7280;
+
+}
 
 </style>

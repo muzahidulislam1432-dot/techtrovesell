@@ -90,9 +90,17 @@ const comparisons = defineCollection({
       )
       .default([]),
 
-    relatedComparisons: z.array(z.string()).default([]),
+relatedComparisons: z.array(z.string()).default([]),
 
-    products: z.array(
+rows: z.array(
+  z.object({
+    feature: z.string(),
+    a: z.string(),
+    b: z.string()
+  })
+).default([]),
+
+products: z.array(
       z.object({
         name: z.string(),
         image: z.string(),
