@@ -9,13 +9,70 @@ excerpt: A detailed comparison between the Logitech MX Master 3S and MX Anywhere
 heroImage: "/images/comparison/mx-master-3s-vs-mx-anywhere-3s-hero.png"
 heroImageAlt: "Logitech MX Master 3S vs Logitech MX Anywhere 3S comparison"
 winner: Logitech MX Master 3S
+
+winnerText: >
+  The Logitech MX Master 3S is the better overall choice for professionals,
+  offering superior ergonomics, advanced productivity features, and excellent
+  long-term comfort for extended desktop use.
+
+winnerPros:
+  - Outstanding ergonomic comfort
+  - MagSpeed electromagnetic scroll wheel
+  - Excellent multi-device workflow
+  - Premium build quality
+  - Great value for productivity
 rows:
   - feature: Category
     a: Premium Productivity Mouse
     b: Compact Productivity Mouse
+
   - feature: Best For
     a: Office & Desk Work
     b: Travel & Mobile Work
+
+  - feature: Comfort
+    a: Excellent
+    b: Very Good
+
+  - feature: Battery
+    a: Up to 70 Days
+    b: Up to 70 Days
+
+  - feature: Connectivity
+    a: Bluetooth + Logi Bolt
+    b: Bluetooth + Logi Bolt
+
+  - feature: DPI
+    a: 8000 DPI
+    b: 8000 DPI
+
+  - feature: Scroll Wheel
+    a: MagSpeed Electromagnetic
+    b: MagSpeed Electromagnetic
+
+  - feature: Multi-device
+    a: Yes (3 Devices)
+    b: Yes (3 Devices)
+
+  - feature: USB-C Charging
+    a: Yes
+    b: Yes
+
+  - feature: Weight
+    a: 141 g
+    b: 99 g
+
+  - feature: Custom Buttons
+    a: 7 Buttons
+    b: 6 Buttons
+
+  - feature: Darkfield Sensor
+    a: Yes
+    b: Yes
+
+  - feature: Price
+    a: $99
+    b: $79
 amazonUrlA: https://www.amazon.com/Logitech-Master-Performance-Ultra-Fast-Scrolling/dp/B0BS9VVQPD?crid=1ZFCZVFVMMXQ0&dib=eyJ2IjoiMSJ9.nPtypdoCR2CuJShZOzLxMHlHBRazH9vuSYMcijBeXekfKePlDGjC7HgqKT3lJTbMtHLlI30ao12JyuARjuBarxUtV4DIE5fRyPRQLHfLG2VHiEjvD-SWcJLuQwP9fMWkhqrju8aCKD-LAAODLt7-OUd7VboZnO4ZzpdFEia-SUnw_mKZID5jnyGnifMkmgth6ATUFfBlvbTkaYhU-97rZfr7BAv9iO_C7x4phmOYipM.0LAmBTOOt_vNL83J_av4WhBKMSpbU_j3Ni6rufmrx5k&dib_tag=se&keywords=mx+3s&qid=1786133691&sprefix=mx+3s%2Caps%2C409&sr=8-6&linkCode=ll2&tag=techtrovest05-20&linkId=91173523c4be68b56dfafe6674c27cd8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl
 amazonUrlB: https://www.amazon.com/Logitech-Anywhere-Wireless-Mouse-Business/dp/B0BPY5PD8H?crid=9FOST0EQ8LJU&dib=eyJ2IjoiMSJ9.svXGR36uUzAWWYtYKwBAdYDQNw0MXV3czThY33RlSI6y1KS3XbVgffP-RuTrAfOJtHLlI30ao12JyuARjuBar1pLtwUS5U1rG-AQPfu_vY_GkKUS4yryD1KrrZU0xUcNuJa9CBTl4VQcl35mCO8RDzGsSztUkGI0HVQlmAfO6PQB10qAGMdcHI2Snh_FPZvGOQOZ8HgWr2WswPg_HHTWyuO6uWOBiMk74yPiLoMJ9mk.1PJFxANmDC5LG3rx6xceVxSPqddXApQYyXTaTKF5Ux4&dib_tag=se&keywords=mx%2Banywhere%2B3s&qid=1786436751&sprefix=mx%2Banywhere%2B3s%2Caps%2C525&sr=8-2&th=1&linkCode=ll2&tag=techtrovest05-20&linkId=51e5bcb3940e32d9c8b09fe4fe4a938d&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl
 seoTitle: Logitech MX Master 3S vs MX Anywhere 3S (2026 Comparison)
@@ -73,23 +130,6 @@ If portability is your top priority, the **Logitech MX Anywhere 3S** is the bett
 
 ***
 
-### Quick Specifications Comparison
-
-| Feature | Logitech MX Master 3S | Logitech MX Anywhere 3S |
-| --- | --- | --- |
-| Category | Premium Productivity Mouse | Compact Productivity Mouse |
-| Best For | Office & Desk Work | Travel & Mobile Work |
-| Sensor | Darkfield 8,000 DPI | Darkfield 8,000 DPI |
-| Connectivity | Bluetooth + Logi Bolt | Bluetooth + Logi Bolt |
-| Multi-device | Up to 3 Devices | Up to 3 Devices |
-| Battery Life | Up to 70 Days | Up to 70 Days |
-| Charging | USB-C | USB-C |
-| Scroll Wheel | MagSpeed + Horizontal Wheel | MagSpeed |
-| Weight | 141 g | 95 g |
-| Quiet Clicks | Yes | Yes |
-| Works on Glass | Yes | Yes |
-
-***
 
 # Design & Build Quality
 
