@@ -6,7 +6,7 @@ category: Wireless Mouse
 productA: Logitech Mx Master 3S
 productB: Logitech Mx Anywhere 3S
 excerpt: A detailed comparison between the Logitech MX Master 3S and MX Anywhere 3S to help you choose the right productivity mouse.
-heroImage: "/images/comparisons/mx-master-3s-vs-mx-anywhere-3s-hero.png"
+heroImage: "/images/comparison/mx-master-3s-vs-mx-anywhere-3s-hero.png"
 heroImageAlt: "Logitech MX Master 3S vs Logitech MX Anywhere 3S comparison"
 winner: Logitech MX Master 3S
 rows:
@@ -23,7 +23,7 @@ seoDescription: Compare Logitech MX Master 3S vs MX Anywhere 3S including comfor
 publishedAt: 2026-08-08
 products:
   - tagline: Best for desktop productivity
-    price: $99
+    price: $89
     amazon: '#'
     weight: 141 g
     connectivity: Bluetooth + Logi Bolt
@@ -33,7 +33,7 @@ products:
     image: /images/reviews/logitech-mx-master-3s.png
     name: Logitech MX Master 3S
   - tagline: Best for travel
-    price: $79
+    price: $94
     amazon: '#'
     weight: 99 g
     connectivity: Bluetooth + Logi Bolt
@@ -44,8 +44,6 @@ products:
     name: Logitech MX Anywhere 3S
 updatedAt: 2026-08-08
 ---
-
-![](/uploads/ChatGPT%20Image%20Aug%2011%2C%202026%2C%2002_35_31%20PM.png)
 
 # Logitech MX Master 3S vs Logitech MX Anywhere 3S (2026): Which Mouse Should You Buy?
 
