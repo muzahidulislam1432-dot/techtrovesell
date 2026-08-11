@@ -1,7 +1,7 @@
 ---
 title: Logitech MX Keys S vs Logitech MX Keys Mini
 slug: logitech-mx-keys-s-vs-mx-keys-mini
-status: published
+status: draft
 category: keyboards
 productA: Logitech MX Keys S
 productB: Logitech MX Keys Mini
