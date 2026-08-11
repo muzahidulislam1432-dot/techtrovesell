@@ -13,13 +13,22 @@ const { products = [] } = Astro.props;
 
 {products.map(product => (
 <th>
-<img src={product.image} alt={product.name} />
 
-<h3>{product.name}</h3>
+  <div class="comparison-header">
 
-<p class="comparison-score">
-⭐ {product.score}/5
-</p>
+    <img
+      src={product.image}
+      alt={product.name}
+      class="comparison-product-image"
+    />
+
+    <h3>{product.name}</h3>
+
+    <p class="comparison-score">
+      ⭐ {product.score}/5
+    </p>
+
+  </div>
 
 </th>
 ))}
@@ -31,27 +40,27 @@ const { products = [] } = Astro.props;
 <tbody>
 
 <tr>
-<td>Comfort</td>
+<td>🖱️ Comfort</td>
 {products.map(product => <td>{product.comfort}</td>)}
 </tr>
 
 <tr>
-<td>Battery</td>
+<td>🔋 Battery</td>
 {products.map(product => <td>{product.battery}</td>)}
 </tr>
 
 <tr>
-<td>Connectivity</td>
+<td>📶 Connectivity</td>
 {products.map(product => <td>{product.connectivity}</td>)}
 </tr>
 
 <tr>
-<td>Weight</td>
+<td>⚖️ Weight</td>
 {products.map(product => <td>{product.weight}</td>)}
 </tr>
 
 <tr>
-<td>Price</td>
+<td>💰 Price</td>
 {products.map(product => <td>{product.price}</td>)}
 </tr>
 
@@ -84,3 +93,126 @@ Check Amazon
 </table>
 
 </div>
+
+<style>
+
+.comparison-wrapper{
+    overflow-x:auto;
+    margin:48px 0;
+}
+
+.comparison-table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child{
+    width:180px;
+}
+
+.comparison-table th{
+    background:#0f172a;
+    color:white;
+    padding:18px 18px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.comparison-table td{
+    padding:18px 22px;
+    border-bottom:1px solid #ececec;
+    vertical-align:middle;
+}
+
+.comparison-table td:first-child{
+    width:220px;
+    font-weight:700;
+    color:#0f172a;
+    white-space:nowrap;
+}
+
+.comparison-table td:not(:first-child){
+    text-align:center;
+    font-weight:500;
+}
+
+.comparison-table tbody tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.comparison-table tbody tr:hover{
+    background:#eef5ff;
+    transition:.2s;
+}
+
+.comparison-table th img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 12px;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    padding:0;
+}
+
+.comparison-table th h3{
+    font-size:1.35rem;
+    font-weight:700;
+    line-height:1.2;
+    margin:8px 0 4px;
+    color:#fff;
+}
+
+.comparison-table a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:220px;
+    height:52px;
+
+    margin:0 auto;
+
+    border-radius:12px;
+
+    font-weight:700;
+}
+
+.comparison-table tbody tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.comparison-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.comparison-product-image{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.comparison-header h3{
+    margin:0;
+    font-size:1.35rem;
+    line-height:1.3;
+    font-weight:700;
+}
+
+.comparison-header .comparison-score{
+    margin:0;
+}
+
+.comparison-action{
+    background:#fff;
+    border:none;
+}
+</style>

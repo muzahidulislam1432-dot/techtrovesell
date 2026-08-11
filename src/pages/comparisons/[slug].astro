@@ -47,11 +47,11 @@ const d = entry.data;
         {d.category} Comparison
       </p>
 
-      <h1>
-        {d.products[0].name} vs {d.products[1].name}
-      </h1>
+     <h1 class="comparison-title">
+  {d.products[0].name} vs {d.products[1].name}
+</h1>
 
-      <p class="article-summary">
+      <p class="comparison-summary">
         {d.excerpt}
       </p>
 
@@ -64,75 +64,107 @@ const d = entry.data;
 
   <section class="comparison-products">
 
-    <div class="container">
+<div class="container">
 
-      <div class="product-grid">
+  <div class="comparison-hero">
 
-        {d.products.map((product) => (
+    {d.products.map((product) => (
 
-          <div class="product-card">
+      <article class="comparison-card">
 
-            <img
-              src={product.image}
-              alt={product.name}
-              class="product-image"
-            />
+        <img
+          src={product.image}
+          alt={product.name}
+          class="comparison-image"
+        />
 
-            <h2>{product.name}</h2>
+        <div class="comparison-content">
 
-            <div class="product-rating">
-              ⭐ {product.score}/5
-            </div>
+          <h2>{product.name}</h2>
 
-            <div class="product-price">
-              {product.price}
-            </div>
-
-            <p class="product-tagline">
-              {product.tagline}
-            </p>
-
-            <a
-              href={product.amazon}
-              class="button button--amazon"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              Check Amazon Price
-            </a>
-
+          <div class="comparison-score">
+            ⭐ {product.score}/5
           </div>
 
-        ))}
+          {product.price && (
+            <div class="comparison-price">
+              {product.price}
+            </div>
+          )}
 
-      </div>
+          {product.tagline && (
+            <p class="comparison-tagline">
+              {product.tagline}
+            </p>
+          )}
 
-    </div>
+          <a
+            href={product.amazon}
+            class="button button--amazon"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            Check Amazon Price
+          </a>
+
+        </div>
+
+      </article>
+
+    ))}
+
+  </div>
+
+</div>
 
   </section>
 
 
   <!-- WINNER -->
 
-  <section class="comparison-winner">
+<section class="comparison-winner">
 
-    <div class="container">
+  <div class="container">
 
-      <div class="review-panel">
+    <div class="winner-card">
 
-        <p class="eyebrow">
-          Quick Result
-        </p>
-
-        <h2>Winner</h2>
-
-        <p>{d.winner}</p>
-
+      <div class="winner-badge">
+        🏆 Quick Verdict
       </div>
+
+      <h2 class="winner-title">
+        {d.winner}
+      </h2>
+
+      <div class="winner-score">
+        ⭐ {d.products[0].score}/5
+      </div>
+
+      <p class="winner-text">
+        Best choice for professionals who want maximum productivity,
+        comfort and customization.
+      </p>
+
+      <ul class="winner-list">
+        <li>✔ Excellent ergonomics</li>
+        <li>✔ Advanced productivity features</li>
+        <li>✔ Best overall value</li>
+      </ul>
+
+      <a
+        href={d.products[0].amazon}
+        class="button button--amazon"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        Check Amazon Price
+      </a>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
   <!-- COMPARISON TABLE -->
@@ -171,3 +203,167 @@ const d = entry.data;
 <Footer />
 
 </BaseLayout>
+
+
+<style>
+
+.comparison-hero{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+    margin:48px 0;
+}
+
+.comparison-card{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 8px 24px rgba(0,0,0,.05);
+}
+
+.comparison-image{
+    width:170px;
+    height:170px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.comparison-content h2{
+    font-size:1.8rem;
+    line-height:1.15;
+    margin-bottom:10px;
+    white-space:nowrap;
+}
+
+.comparison-score{
+    font-size:20px;
+    font-weight:700;
+    color:#f59e0b;
+}
+
+.comparison-price{
+    font-size:26px;
+    font-weight:800;
+    margin:10px 0;
+}
+
+.comparison-tagline{
+    margin:12px 0 20px;
+    color:#555;
+}
+
+.comparison-title{
+    font-size:clamp(2.6rem, 4vw, 3.6rem);
+    line-height:1.08;
+    font-weight:800;
+    max-width:none;
+    white-space:nowrap;
+    letter-spacing:-0.03em;
+    margin-bottom:18px;
+}
+
+@media (max-width:900px){
+
+.comparison-hero{
+grid-template-columns:1fr;
+}
+
+.comparison-card{
+flex-direction:column;
+text-align:center;
+}
+
+.comparison-image{
+    width:180px;
+    height:180px;
+}
+
+.comparison-title{
+    font-size:2.2rem;
+    line-height:1.15;
+    white-space:normal;
+}
+
+.comparison-summary{
+    font-size:1rem;
+}
+
+}
+
+/* ===== HERO ===== */
+
+.article-hero .container{
+    max-width:1380px;
+}
+
+.comparison-title{
+    font-size:clamp(2.3rem,3.5vw,3.2rem);
+    line-height:1.08;
+    font-weight:800;
+    white-space:nowrap;
+    margin-bottom:14px;
+}
+
+.comparison-summary{
+    max-width:none;
+    font-size:1.08rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:#4b5563;
+}
+
+.article-hero{
+    padding:40px 0 35px;
+}
+
+.winner-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:40px;
+    margin:40px 0;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.winner-badge{
+    display:inline-block;
+    background:#eef6ff;
+    color:#2563eb;
+    font-weight:700;
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:18px;
+}
+
+.winner-title{
+    font-size:2rem;
+    margin:0 0 12px;
+}
+
+.winner-score{
+    color:#f59e0b;
+    font-size:1.3rem;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.winner-text{
+    color:#555;
+    max-width:650px;
+    margin-bottom:20px;
+}
+
+.winner-list{
+    margin:0 0 28px;
+    padding-left:20px;
+}
+
+.winner-list li{
+    margin-bottom:10px;
+}
+</style>

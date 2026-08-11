@@ -19,7 +19,7 @@ winner: "Logitech MX Master 3S"
 
 products:
   - name: "Logitech MX Master 3S"
-    image: "/images/reviews/logitech-mx-master-3s.jpg"
+    image: "/images/reviews/logitech-mx-master-3s.png"
     score: 4.9
     comfort: "Excellent"
     battery: "Up to 70 Days"
@@ -30,7 +30,7 @@ products:
     tagline: "Best for desktop productivity"
 
   - name: "Logitech MX Anywhere 3S"
-    image: "/images/reviews/logitech-mx-anywhere-3s.jpg"
+    image: "/images/reviews/logitech-mx-anywhere-3s.png"
     score: 4.7
     comfort: "Very Good"
     battery: "Up to 70 Days"
