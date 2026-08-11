@@ -54,21 +54,26 @@ const guides = defineCollection({
 
 const comparisons = defineCollection({
   loader: glob({
-    pattern: '**/*.md',
-    base: './src/content/comparisons'
+    pattern: "**/*.md",
+    base: "./src/content/comparisons",
   }),
 
   schema: z.object({
-
     title: z.string(),
     slug: z.string(),
     status: commonStatus,
 
     category: z.string(),
-
     excerpt: z.string(),
 
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().default(""),
+
     winner: z.string(),
+
+    winnerTitle: z.string().optional(),
+    winnerText: z.string().optional(),
+    winnerPros: z.array(z.string()).default([]),
 
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
@@ -76,38 +81,56 @@ const comparisons = defineCollection({
     publishedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date().optional(),
 
+    faqs: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .default([]),
+
+    relatedComparisons: z.array(z.string()).default([]),
+
     products: z.array(
       z.object({
         name: z.string(),
         image: z.string(),
+
         score: z.number(),
+
         comfort: z.string(),
         battery: z.string(),
         connectivity: z.string(),
         weight: z.string(),
+
         amazon: z.string(),
+
         price: z.string().optional(),
-        tagline: z.string().optional()
+        tagline: z.string().optional(),
+
+        pros: z.array(z.string()).default([]),
+        cons: z.array(z.string()).default([]),
       })
-    )
-    })
+    ),
+  }),
 });
 
 const deals = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/deals' }),
-  schema: z.object({
-    title: z.string(),
-    slug: z.string(),
-    status: commonStatus,
-    category: z.string(),
-    image: z.string(),
-    imageAlt: z.string().default(''),
-    excerpt: z.string(),
-    amazonUrl: z.string(),
-    dealLabel: z.string().default('Featured Deal'),
-    expiryNote: z.string().optional(),
-    publishedAt: z.coerce.date().optional()
-  })
+loader: glob({ pattern: '**/*.md', base: './src/content/deals' }),
+schema: z.object({
+title: z.string(),
+slug: z.string(),
+status: commonStatus,
+category: z.string(),
+image: z.string(),
+imageAlt: z.string().default(''),
+excerpt: z.string(),
+amazonUrl: z.string(),
+dealLabel: z.string().default('Featured Deal'),
+expiryNote: z.string().optional(),
+publishedAt: z.coerce.date().optional()
+})
 });
 
 const pages = defineCollection({

@@ -55,6 +55,18 @@ const d = entry.data;
         {d.excerpt}
       </p>
 
+      {
+  d.heroImage && (
+    <div class="comparison-hero-image">
+      <img
+        src={d.heroImage}
+        alt={d.heroImageAlt || d.title}
+        loading="eager"
+      />
+    </div>
+  )
+}
+
     </div>
 
   </section>
@@ -366,4 +378,16 @@ text-align:center;
 .winner-list li{
     margin-bottom:10px;
 }
+
+.comparison-hero-image{
+    margin-top:40px;
+}
+
+.comparison-hero-image img{
+    width:100%;
+    border-radius:22px;
+    display:block;
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+
 </style>
