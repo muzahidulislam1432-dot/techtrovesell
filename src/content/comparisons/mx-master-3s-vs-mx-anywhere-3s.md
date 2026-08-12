@@ -71,8 +71,8 @@ rows:
     b: Yes
 
   - feature: Price
-    a: $99
-    b: $79
+    a: $89
+    b: $94
 amazonUrlA: https://www.amazon.com/Logitech-Master-Performance-Ultra-Fast-Scrolling/dp/B0BS9VVQPD?crid=1ZFCZVFVMMXQ0&dib=eyJ2IjoiMSJ9.nPtypdoCR2CuJShZOzLxMHlHBRazH9vuSYMcijBeXekfKePlDGjC7HgqKT3lJTbMtHLlI30ao12JyuARjuBarxUtV4DIE5fRyPRQLHfLG2VHiEjvD-SWcJLuQwP9fMWkhqrju8aCKD-LAAODLt7-OUd7VboZnO4ZzpdFEia-SUnw_mKZID5jnyGnifMkmgth6ATUFfBlvbTkaYhU-97rZfr7BAv9iO_C7x4phmOYipM.0LAmBTOOt_vNL83J_av4WhBKMSpbU_j3Ni6rufmrx5k&dib_tag=se&keywords=mx+3s&qid=1786133691&sprefix=mx+3s%2Caps%2C409&sr=8-6&linkCode=ll2&tag=techtrovest05-20&linkId=91173523c4be68b56dfafe6674c27cd8&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl
 amazonUrlB: https://www.amazon.com/Logitech-Anywhere-Wireless-Mouse-Business/dp/B0BPY5PD8H?crid=9FOST0EQ8LJU&dib=eyJ2IjoiMSJ9.svXGR36uUzAWWYtYKwBAdYDQNw0MXV3czThY33RlSI6y1KS3XbVgffP-RuTrAfOJtHLlI30ao12JyuARjuBar1pLtwUS5U1rG-AQPfu_vY_GkKUS4yryD1KrrZU0xUcNuJa9CBTl4VQcl35mCO8RDzGsSztUkGI0HVQlmAfO6PQB10qAGMdcHI2Snh_FPZvGOQOZ8HgWr2WswPg_HHTWyuO6uWOBiMk74yPiLoMJ9mk.1PJFxANmDC5LG3rx6xceVxSPqddXApQYyXTaTKF5Ux4&dib_tag=se&keywords=mx%2Banywhere%2B3s&qid=1786436751&sprefix=mx%2Banywhere%2B3s%2Caps%2C525&sr=8-2&th=1&linkCode=ll2&tag=techtrovest05-20&linkId=51e5bcb3940e32d9c8b09fe4fe4a938d&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl
 seoTitle: Logitech MX Master 3S vs MX Anywhere 3S (2026 Comparison)
