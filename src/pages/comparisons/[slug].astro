@@ -82,7 +82,7 @@ const relatedEntries = await Promise.all(
 
   <section class="comparison-products">
 
-<div class="container">
+<div class="container comparison-wide">
 
   <div class="comparison-hero">
 
@@ -174,7 +174,7 @@ const relatedEntries = await Promise.all(
 
 <section class="comparison-winner">
 
-  <div class="container">
+  <div class="container comparison-medium">
 
     <div class="winner-card">
 
@@ -224,7 +224,9 @@ const relatedEntries = await Promise.all(
 
   <section class="comparison-table-section">
 
-    <div class="container">
+    <div class="container comparison-wide">
+
+    </div>
 
       <ComparisonTable
   products={d.products}
@@ -240,7 +242,9 @@ const relatedEntries = await Promise.all(
 
   <section class="article-body">
 
-    <div class="container">
+    <div class="container comparison-narrow">
+
+    </div>
 
       <div class="review-panel content-body">
 
@@ -761,6 +765,40 @@ letter-spacing:.05em;
 content:"🖱️";
 
 font-size:1.2rem;
+
+}
+
+/* ===============================
+   PAGE LAYOUT
+================================ */
+
+.comparison-wide{
+
+    max-width:1500px;
+
+}
+
+.comparison-medium{
+
+    max-width:1180px;
+
+}
+
+.comparison-narrow{
+
+    max-width:920px;
+
+}
+
+@media (max-width:1200px){
+
+.comparison-wide,
+.comparison-medium,
+.comparison-narrow{
+
+max-width:100%;
+
+}
 
 }
 
