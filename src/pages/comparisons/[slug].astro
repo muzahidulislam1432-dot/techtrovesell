@@ -50,7 +50,7 @@ const relatedEntries = await Promise.all(
   <div class="container hero-container">
 
      <p class="eyebrow">
-  🖱️ {d.category.toUpperCase()} COMPARISON
+  {d.category.toUpperCase()} COMPARISON
 </p>
 
      <h1 class="comparison-title">
@@ -404,7 +404,7 @@ alt={item.data.title}
 
 .comparison-title{
 
-font-size:clamp(2.8rem,4vw,4.2rem);
+font-size:clamp(3rem,4.8vw,4.6rem);
 
 font-weight:800;
 
@@ -418,7 +418,7 @@ color:#111827;
 
 white-space:normal;
 
-max-width:1200px;
+max-width:1450px;
 
 }
 
@@ -453,7 +453,7 @@ text-align:center;
 /* ===== HERO ===== */
 
 .article-hero .container{
-    max-width:1380px;
+    max-width:1600px;
 }
 
 .comparison-title{
@@ -467,13 +467,13 @@ text-align:center;
     font-size:1.15rem;
     line-height:1.8;
     color:#4b5563;
-    max-width:900px;
+    max-width:1100px;
     margin-bottom:30px;
     white-space:normal;
 }
 
 .article-hero{
-    padding:18px 0 18px;
+    padding:8px 0 15px;
 }
 
 .hero-container{
@@ -533,23 +533,32 @@ text-align:center;
 }
 
 .comparison-hero-image{
-    margin-top:10px;
+
+display:flex;
+
+justify-content:center;
+
+margin-top:14px;
+
 }
 
 .comparison-hero-image img{
 
-width:100%;
+    width:100%;
 
-display:block;
+    max-width:1450px;
 
-border-radius:26px;
+    margin:0 auto;
 
-box-shadow:0 18px 50px rgba(0,0,0,.15);
+    display:block;
 
-border:1px solid #e5e7eb;
+    border-radius:26px;
+
+    box-shadow:0 18px 50px rgba(0,0,0,.15);
+
+    border:1px solid #e5e7eb;
 
 }
-
 .comparison-pros,
 .comparison-cons{
 
@@ -727,33 +736,32 @@ display:inline-flex;
 
 align-items:center;
 
-gap:10px;
+gap:12px;
 
-padding:10px 18px;
+padding:12px 22px;
 
-background:linear-gradient(135deg,#eaf3ff,#dbeafe);
+background:#e8f0ff;
 
 color:#2563eb;
 
-font-size:.88rem;
+font-size:.95rem;
 
 font-weight:800;
 
-letter-spacing:.08em;
-
-text-transform:uppercase;
-
 border-radius:999px;
 
-margin-bottom:22px;
+margin-bottom:26px;
 
-box-shadow:0 6px 18px rgba(37,99,235,.12);
+letter-spacing:.05em;
 
 }
 
 .eyebrow::before{
-    content:"🖱️";
-    font-size:1rem;
+
+content:"🖱️";
+
+font-size:1.2rem;
+
 }
 
 </style>
