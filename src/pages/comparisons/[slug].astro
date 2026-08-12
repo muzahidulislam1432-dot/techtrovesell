@@ -45,13 +45,13 @@ const relatedEntries = await Promise.all(
 
   <!-- HERO -->
 
-  <section class="article-hero">
+<section class="article-hero">
 
-    <div class="container">
+  <div class="container hero-container">
 
-      <p class="eyebrow">
-        {d.category} Comparison
-      </p>
+     <p class="eyebrow">
+  🖱️ {d.category.toUpperCase()} COMPARISON
+</p>
 
      <h1 class="comparison-title">
   {d.products[0].name} vs {d.products[1].name}
@@ -403,13 +403,23 @@ alt={item.data.title}
 }
 
 .comparison-title{
-    font-size:clamp(2.6rem, 4vw, 3.6rem);
-    line-height:1.08;
-    font-weight:800;
-    max-width:none;
-    white-space:nowrap;
-    letter-spacing:-0.03em;
-    margin-bottom:18px;
+
+font-size:clamp(2.8rem,4vw,4.2rem);
+
+font-weight:800;
+
+line-height:1.05;
+
+letter-spacing:-0.04em;
+
+margin-bottom:18px;
+
+color:#111827;
+
+white-space:normal;
+
+max-width:1200px;
+
 }
 
 @media (max-width:900px){
@@ -453,20 +463,22 @@ text-align:center;
     white-space:nowrap;
     margin-bottom:14px;
 }
-
 .comparison-summary{
-    max-width:none;
-    font-size:1.08rem;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+    font-size:1.15rem;
+    line-height:1.8;
     color:#4b5563;
+    max-width:900px;
+    margin-bottom:30px;
+    white-space:normal;
 }
 
 .article-hero{
-    padding:24px 0 20px;
+    padding:18px 0 18px;
 }
 
+.hero-container{
+    max-width:1320px;
+}
 .winner-card{
 
     background:#fff;
@@ -521,14 +533,21 @@ text-align:center;
 }
 
 .comparison-hero-image{
-    margin-top:24px;
+    margin-top:10px;
 }
 
 .comparison-hero-image img{
-    width:100%;
-    border-radius:22px;
-    display:block;
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+
+width:100%;
+
+display:block;
+
+border-radius:26px;
+
+box-shadow:0 18px 50px rgba(0,0,0,.15);
+
+border:1px solid #e5e7eb;
+
 }
 
 .comparison-pros,
@@ -703,18 +722,33 @@ color:#6b7280;
 }
 
 .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 18px;
-    background:#eef5ff;
-    color:#2563eb;
-    font-size:.95rem;
-    font-weight:700;
-    border-radius:999px;
-    margin-bottom:18px;
-    text-transform:uppercase;
-    letter-spacing:.04em;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px 18px;
+
+background:linear-gradient(135deg,#eaf3ff,#dbeafe);
+
+color:#2563eb;
+
+font-size:.88rem;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+border-radius:999px;
+
+margin-bottom:22px;
+
+box-shadow:0 6px 18px rgba(37,99,235,.12);
+
 }
 
 .eyebrow::before{
