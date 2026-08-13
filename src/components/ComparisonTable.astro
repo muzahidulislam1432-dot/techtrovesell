@@ -57,7 +57,7 @@ const {
   </tr>
 ))}
 
-<tr>
+<tr class="comparison-cta-row">
 <td></td>
 
 {products.map(product => (
@@ -110,39 +110,31 @@ View Latest Price →
 }
 
 .comparison-table th{
-
-    background:#0f172a;
-
+    background:#111827;
     color:#fff;
-
-    padding:28px 20px;
-
+    padding:22px 18px;
     text-align:center;
-
     vertical-align:middle;
-
 }
 
 .comparison-table td{
-    padding:20px 24px;
-    border-bottom:1px solid #ececec;
+    padding:14px 20px;
+    border-bottom:1px solid #e5e7eb;
     vertical-align:middle;
+    font-size:15px;
 }
 
 .comparison-table td:first-child{
-    width:240px;
+    width:230px;
     font-weight:700;
-    color:#0f172a;
+    color:#111827;
+    background:#f9fafb;
     white-space:nowrap;
-    background:#f8fafc;
-    font-size:15px;
-    border-right:1px solid #e5e7eb;
 }
 
 .comparison-table td:not(:first-child){
     text-align:center;
     font-weight:600;
-    font-size:15px;
     color:#374151;
 }
 
@@ -176,17 +168,16 @@ View Latest Price →
 }
 
 .comparison-table a{
-
     display:inline-flex;
     align-items:center;
     justify-content:center;
 
-    width:230px;
-    height:54px;
+    min-width:190px;
+    height:48px;
 
-    margin:0 auto;
+    padding:0 22px;
 
-    border-radius:14px;
+    border-radius:10px;
 
     font-weight:700;
 
@@ -202,35 +193,29 @@ View Latest Price →
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:12px;
+    gap:10px;
+    padding:8px 0;
 }
-
 .comparison-product-image{
-
-    width:110px;
-
-    height:110px;
-
+    width:85px;
+    height:85px;
     object-fit:contain;
-
-    transition:.25s;
-
-    filter:drop-shadow(0 8px 12px rgba(0,0,0,.08));
-
+    display:block;
+    margin:auto;
 }
 
 .comparison-header h3{
-
     margin:0;
-
-    font-size:1.45rem;
-
-    line-height:1.25;
-
+    font-size:1.2rem;
+    line-height:1.3;
     font-weight:700;
+    color:#fff;
+}
 
-    color:white;
-
+.comparison-header .comparison-score{
+    margin:0;
+    color:#fbbf24;
+    font-weight:700;
 }
 
 .comparison-rating{
@@ -332,6 +317,23 @@ min-width:760px;
 
 .article-body{
     margin:70px 0;
+}
+
+.comparison-cta-row td{
+    background:#fff !important;
+    padding:22px 18px;
+}
+
+@media (max-width:900px){
+
+.comparison-wrapper{
+    overflow-x:auto;
+}
+
+.comparison-table{
+    min-width:760px;
+}
+
 }
 
 </style>
