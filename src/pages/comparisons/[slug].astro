@@ -49,17 +49,21 @@ const relatedEntries = await Promise.all(
 
   <div class="container hero-container">
 
-     <p class="eyebrow">
-  {d.category.toUpperCase()} COMPARISON
-</p>
+<div class="comparison-copy">
 
-     <h1 class="comparison-title">
-  {d.products[0].name} vs {d.products[1].name}
-</h1>
+    <p class="eyebrow">
+        {d.category} Comparison
+    </p>
 
-      <p class="comparison-summary">
+    <h1 class="comparison-title">
+        {d.products[0].name} vs {d.products[1].name}
+    </h1>
+
+    <p class="comparison-summary">
         {d.excerpt}
-      </p>
+    </p>
+
+</div>
 
       {
   d.heroImage && (
@@ -407,13 +411,16 @@ alt={item.data.title}
 }
 
 .comparison-title{
-    font-size:clamp(2.2rem,3.5vw,3.4rem);
+    font-size:clamp(2rem,2.8vw,3.2rem);
+    line-height:1.1;
     font-weight:800;
-    line-height:1.12;
-    letter-spacing:-0.02em;
-    margin-bottom:14px;
-    color:#111827;
-    white-space:normal;
+    letter-spacing:-0.03em;
+    margin-bottom:16px;
+
+    white-space:nowrap;
+}
+
+.comparison-copy{
     max-width:1100px;
 }
 
@@ -450,17 +457,16 @@ text-align:center;
 /* ===== HERO ===== */
 
 .article-hero .container{
-    max-width:1280px;
+    max-width:1400px;
 }
 
 .comparison-summary{
-    font-size:1.12rem;
+    font-size:1.15rem;
     line-height:1.75;
     color:#4b5563;
+    margin-bottom:28px;
 
-    max-width:900px;
-
-    margin-bottom:20px;
+    max-width:none;
 }
 
 .article-hero{
