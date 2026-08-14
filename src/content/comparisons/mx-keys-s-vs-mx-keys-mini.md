@@ -1,7 +1,7 @@
 ---
 title: 'Logitech MX Keys S vs Logitech MX Keys Mini (2026): Which Keyboard Should You Buy?'
 slug: mx-keys-s-vs-mx-keys-mini
-status: draft
+status: published
 category: keyboards
 productA: Logitech MX Keys S
 productB: Logitech MX Keys Mini
